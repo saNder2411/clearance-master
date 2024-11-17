@@ -1,7 +1,7 @@
-.calva
-.clj-kondo
-.cpcache
-.idea
+/.calva
+/.clj-kondo
+/.cpcache
+/.idea
 /data
 /target
 /classes
