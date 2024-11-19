@@ -31,7 +31,7 @@
   (start [rec]
     (if (:server rec)
       rec
-      (let [common-interceptors [(inject-dependencies rec) (rm/resource "resources/public") content-negotiation]
+      (let [common-interceptors [(inject-dependencies rec) (rm/resource "public") content-negotiation]
             _ (println "RECORD" rec)
             server (-> config
                        (service-map common-interceptors)
