@@ -1,0 +1,18 @@
+.main_banner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.125rem 1.25rem;
+    margin-top: 8.75rem
+}
+
+.main_banner_text button {
+    margin-top: 2.125rem;
+}
+
+@media (max-width:899px) {
+    .main_banner {
+        grid-template-columns: repeat(1, 1fr);
+        margin-top:2.5rem;
+    }
+    .main_banner_text button {width: 100%}
+}

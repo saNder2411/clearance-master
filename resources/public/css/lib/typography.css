@@ -1,0 +1,43 @@
+.fs_10 {font-size:10px}
+.fs_12 {font-size:12px}
+.fs_14 {font-size:14px}
+.fs_16 {font-size:16px}
+.fs_18 {font-size:18px}
+.fs_20 {font-size:20px}
+.fs_22 {font-size:22px}
+.fs_24 {font-size:24px}
+.fs_26 {font-size:26px}
+.fs_28 {font-size:28px}
+.fs_30 {font-size:30px}
+.fs_32 {font-size:32px}
+.fs_34 {font-size:34px}
+.fs_36 {font-size:36px}
+.fs_38 {font-size:38px}
+.fs_40 {font-size:40px}
+
+.fw_200 {font-weight:200}
+.fw_300 {font-weight:300}
+.fw_400 {font-weight:400}
+.fw_500 {font-weight:500}
+.fw_600 {font-weight:600}
+.fw_700 {font-weight:700}
+.fw_800 {font-weight:800}
+.fw_900 {font-weight:900}
+
+.lh_1d6 {line-height:1.6}
+.lh_1d4 {line-height:1.4}
+.lh_24 {line-height:24px}
+
+.text_align_c {text-align: center}
+
+.text_align_c_not_mob {text-align: center}
+@media (max-width:768px) {
+    .text_align_c_not_mob {text-align: left}
+}
+.uppercase {text-transform: uppercase}
+
+.c_light {color: var(--color-light)}
+.c_light_sec {color: var(--color-light-sec)}
+.c_light_no_active {color: var(--color-light-no-active)}
+.c_dark {color: var(--color-dark)}
+.c_social {color: var(--color-social)}

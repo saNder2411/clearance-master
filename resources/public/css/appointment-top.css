@@ -1,0 +1,14 @@
+.appointment_top {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width:767px) {
+    .appointment_top {
+       flex-direction: column;
+    }
+
+    .appointment_top img {
+        align-self: center;
+    }
+}

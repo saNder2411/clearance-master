@@ -1,0 +1,63 @@
+.block {display: block}
+.hidden {display: none}
+.inline_block {display: inline-block}
+.inline {display: inline}
+.table {display: table}
+
+.flex {display: flex}
+.inline_flex {display: inline-flex}
+
+.flex_wrap {flex-wrap: wrap}
+
+.direction_col {flex-direction: column}
+
+.justify_c {justify-content: center}
+.justify_s {justify-content: flex-start}
+.justify_e {justify-content: flex-end}
+.justify_sa {justify-content: space-around}
+.justify_sb {justify-content: space-between}
+.justify_se {justify-content: space-evenly}
+
+.align_c {align-items: center}
+.align_s {align-items: flex-start}
+.align_e {align-items: flex-end}
+.align-b {align-items: baseline}
+.align_stch {align-items: stretch}
+.align_slf_c {align-self: center}
+.align_slf_s {align-self: flex-start}
+.align_slf_e {align-self: flex-end}
+.flex_shrink_0 {flex-shrink: 0}
+.flex_shrink_1 {flex-shrink: 1}
+.flex_grow_0 {flex-grow: 0}
+.flex_grow_1 {flex-grow: 1}
+
+.grid {display: grid}
+.inline_grid {display: inline-grid}
+
+.overflow_hidden {overflow: hidden}
+.overflow_visible {overflow: visible}
+.overflow_x_auto {overflow-x: auto}
+.overflow_y_auto {overflow-y: auto}
+.overflow_y_scroll {overflow-y: scroll}
+
+.gap_x_20 {gap: 0 1.25rem}
+
+.gap_x_84_res {gap: 0 5.25rem}
+@media (max-width:1139px) {
+    .gap_x_84_res {gap:0 3rem}
+}
+@media (max-width:1023px) {
+    .gap_x_84_res {gap:0 2rem}
+}
+@media (max-width:767px) {
+    .gap_x_84_res {gap:0 1.875rem}
+}
+
+.grid_2_col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width:767px) {
+    .grid_2_col {grid-template-columns: repeat(1, 1fr);}
+
+}

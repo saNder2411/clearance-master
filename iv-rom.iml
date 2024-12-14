@@ -59,7 +59,7 @@
     <orderEntry type="library" name="Deps: io.dropwizard.metrics/metrics-core:4.2.19" level="project" />
     <orderEntry type="library" name="Deps: org.eclipse.jetty.websocket/websocket-core-client:11.0.20" level="project" />
     <orderEntry type="library" name="Deps: io.opentelemetry/opentelemetry-context:1.36.0" level="project" />
-    <orderEntry type="library" name="Deps: hiccup:2.0.0-RC3" level="project" />
+    <orderEntry type="library" name="Deps: hiccup:2.0.0-RC4" level="project" />
     <orderEntry type="library" name="Deps: org.eclipse.jetty.websocket/websocket-jakarta-server:11.0.20" level="project" />
     <orderEntry type="library" name="Deps: io.opentracing/opentracing-api:0.33.0" level="project" />
     <orderEntry type="library" name="Deps: org.javassist/javassist:3.18.1-GA" level="project" />

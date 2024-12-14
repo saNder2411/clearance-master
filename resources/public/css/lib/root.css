@@ -1,0 +1,77 @@
+:root {
+    --light: rgba(255,255,255,1);
+    --light-sec:rgba(82,82,91,1);
+    --light-242:rgba(242,242,242,1);
+    --light-245:rgba(245,245,245,1);
+    --dark:rgba(9,9,11,1);
+    --dark-sec:rgba(24,24,27,1);
+    --yellow:rgba(255,211,76,1);
+
+    --color-light:rgba(9,9,11,1);
+    --color-light-sec:rgba(37,37,47,1);
+    --color-light-no-active:rgba(0,0,0,.45);
+    --color-dark:rgba(255,255,255,1);
+    --color-social:rgba(153,153,153,1);
+
+    --dark-a10:rgba(9,9,11,.1);
+    --dark-a15:rgba(9,9,11,.15);
+    --dark-a20:rgba(9,9,11,.2);
+    --dark-a30:rgba(9,9,11,.3);
+    --dark-a90:rgba(9,9,11,.9);
+
+    --light-a05:rgba(255,255,255,.05);
+    --light-a10:rgba(255,255,255,.1);
+    --light-a15:rgba(255,255,255,.15);
+    --light-a20:rgba(255,255,255,.2);
+    --light-a30:rgba(255,255,255,.3);
+    --light-a90:rgba(255,255,255,.9);
+    --light-a95:rgba(255,255,255,.95);
+
+    --light-bg-btn-hover:rgba(48, 48, 50, 1);
+    --yellow-bg-btn-hover: rgba(255, 222, 84, 1);
+
+    --yellow-brd-btn: rgba(238, 212, 55,.3);
+    --dark-brd-checkbox-hover:rgba(82,82,91,1);
+
+    --light-shadow-input:0px 1px 3px -.7px var(--dark-a10);
+    --light-shadow-checkbox: 0px 1.3px 3px 0px var(--dark-a10);
+    --light-shadow-checkbox-after: 0 0 0 8px var(--dark-a90);
+    --light-shadow-checkbox-checked: inset 0 .2px var(--light-a15);
+    --dark-shadow-btn:inset 0 1px var(--light-a15);
+    --dark-shadow-chekbox: 0 0 0 8px var(--dark-brd-checkbox-hover);
+    --dark-shadow-chekbox-checked: inset 0 .2px var(--light-a15);
+    --sec-shadow-btn:inset 0 2px var(--light-a30);
+}
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: var(--light);
+    color: var(--color-light);
+    font-size: 16px;
+    word-spacing: 3px;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+ul {list-style: none}
+a {text-decoration: none;color: var(--color-light)}
+fieldset {border: none}
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+}
+button, select {
+    text-transform: none;
+}

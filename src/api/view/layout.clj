@@ -1,44 +1,136 @@
 (ns api.view.layout
-  (:require [hiccup.page :as hp]))
+  (:require [hiccup.page :as hp]
+            [api.view.header :refer [header]]
+            [api.view.main-banner :refer [main-banner]]
+            [api.view.breadcrumbs :refer [breadcrumbs]]
+            [api.view.slideshow :refer [slideshow]]
+            [api.view.card-img-left :refer [card-img-left]]
+            [api.view.card :refer [card]]
+            [api.view.appointment-top :refer [appointment-top]]
+            [api.view.card-time :refer [card-time]]
+            [api.view.contact-form :refer [contact-form]]
+            [api.view.footer :refer [footer]]))
 
-(defn layout []
-  [:head
-   [:meta {:charset "utf-8"}]
-   [:meta {:name "viewport" :content "minimum-scale=1, initial-scale=1, width=device-width"}]
-   [:link {:rel "apple-touch-icon" :sizes "180x180" :href "icon/apple-touch-icon.png"}]
-   [:link {:rel "icon" :type "image/png" :sizes "32x32" :href "icon/favicon-32x32.png"}]
-   [:link {:rel "icon" :type "image/png" :sizes "16x16" :href "icon/favicon-16x16.png"}]
-   [:link {:rel "manifest" :href "icon/manifest"}]
-   [:title "J.R."]
-   (hp/include-css "css/output.css")
+(defn layout [route]
+  [:html {:lang "de"}
+   [:head
+    [:meta {:charset "utf-8"}]
+    [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
+    [:link {:rel "icon" :type "image/png" :href "/favicon/favicon-96x96.png" :sizes "96x96"}]
+    [:link {:rel "icon" :type "image/svg+xml" :href "/favicon/favicon.svg"}]
+    [:link {:rel "shortcut icon" :href "/favicon/favicon.ico"}]
+    [:link {:rel "apple-touch-icon" :sizes "180x180" :href "/favicon/apple-touch-icon.png"}]
+    [:meta {:name "apple-mobile-web-app-title" :content "Räumungsmeister"}]
+    [:link {:rel "manifest" :href "/favicon/site.webmanifest"}]
+    [:title "Räumungsmeister"]
+    (hp/include-css "/css/index.css")]
+
    [:body
-    [:header {:class "pos_sticky bg_primary_blur"}
-     [:div {:class "mx_w_1144 m_0_a p_16_0 d_flex align_c justify_sb"}
-      [:a {:href "/"}
-       [:img {:alt "logo" :loading "lazy" :width "30" :height "30" :decoding "async" :data-nimg "1" :style "color:transparent" :src "/img/logo_image.svg"}]]
+    (header route)
 
-      [:nav {:class "d_flex align_c"}
-       [:a {:class "nav_i f_w_600 hover_br_b nav_i__active" :href "/"}
-        "Privatumzug"]
+    (main-banner)
 
-       [:a {:class "nav_i f_w_600 hover_br_b ml_32" :href "/"}
-        "Firmenumzug"]
+    [:div.container.mb_44
+     (breadcrumbs)]
 
-       [:a {:class "nav_i f_w_600 hover_br_b ml_32" :href "/"}
-        "Preisanfrage"]
+    [:div.max_w_80.mx_a.mb_28
+     (slideshow)]
 
-       [:a {:class "nav_i f_w_600 hover_br_b ml_32" :href "/"}
-        "Haushaltsauflösungen"]]]]
+    [:div.bg_yellow
+     [:div.container.container_py
+      (card-img-left)]]
 
-    [:div {:class "mx_w_1144 m_0_a mt_140 mb_128 d_flex align_s justify_sb"}
-     [:div {:class "w_55"}
-      [:h1 {:class "mb_32"} "Professionelle Haushaltsauflösungen"]
-      [:p {:class "mb_24 color_secondary"} "Vielen Dank, dass wir uns kurz vorstellen dürfen. Vom kleinen Appartement  über Messiwohnungen bis zum mehrstöckigen Bürogebäude haben wir schon alles geräumt. Auf Wunsch mit Renovierung, Endreinigung und Aktenvernichtung mit Zertifikat."]
-      [:p {:class "color_secondary"} "Persönlich für Sie da\nNeben Privatkunden arbeiten wir auch oft mit Firmen, Berufsbetreuern, Gemeinden, Hausverwaltungen und Sozialämtern zusammen. \nWir sorgen dafür, dass Sie sich um nichts mehr zu kümmern brauchen. Ihre Haushaltsauflösung wird zügig und störungsfrei ablaufen. Machen Sie es sich leicht."]]
-     [:img {:class "w_40" :src "/img/main_top_0.webp"}]]
+    [:div.bg_light_242
+     [:div.container.container_py
+      [:div.max_w_800.mx_a.text_align_c_not_mob.mb_60_res
+       [:h2 {:class "h_mb fs_28 fw_600"} "Leistungsumfang und Termine"]
+       [:p {:class "c_light_sec"} "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."]]
 
-    [:div {:style "height: 400px" :class "bg_secondary"}]
+      (card {:id "card_00"
+             :card-class "bg_light mb_84_res"
+             :right-class "bg_light_245"
+             :title       "Leistungsumfang und Termine"
+             :left-text   ""
+             :right-text  "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."
+             :bg-image    "/img/moving_0.jpeg"})
 
-    [:div {:style "height: 400px" :class ""}]
+      (card {:id "card_01"
+             :card-class "bg_light mb_84_res"
+             :right-class "bg_light_245"
+             :title       "Leistungsumfang und Termine"
+             :left-text   ""
+             :right-text  "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."
+             :bg-image    "/img/moving_1.jpg"})
 
-    [:div {:style "height: 400px" :class "bg_secondary"}]]])
+      (card {:id "card_02"
+             :card-class "bg_light mb_84_res"
+             :right-class "bg_light_245"
+             :title       "Leistungsumfang und Termine"
+             :left-text   ""
+             :right-text  "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."
+             :bg-image    "/img/moving_2.jpg"})
+
+      [:div.max_w_800.mx_a.text_align_c_not_mob
+       [:p {:class "p_mb c_light_sec"} "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."]
+
+       [:button {:class "button_d mob_w_100 my_16 c_dark border_r_22 shadow_22 py_6 px_22" :type "button"}
+        "Jetzt starten"]]]]
+
+    [:div.bg_light
+     [:div.container.container_py
+      [:div.max_w_800.mb_60_res
+       [:h2 {:class "h_mb fs_28 fw_600"} "Leistungsumfang und Termine"]
+       [:p {:class "c_light_sec"} "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."]]
+
+      [:div.grid_2_col.gap_x_84_res
+       (card {:id         "card_03"
+              :card-class "vertical bg_yellow mb_84_res"
+              :title      "Leistungsumfang und Termine"
+              :left-text  ""
+              :right-text "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."
+              :bg-image   "/img/moving_3.jpeg"})
+
+       (card {:id         "card_04"
+              :card-class "vertical bg_yellow mb_84_res"
+              :title      "Leistungsumfang und Termine"
+              :left-text  ""
+              :right-text "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."
+              :bg-image   "/img/moving_4.jpg"})]
+
+      [:div.grid_2_col.gap_x_84_res
+       (card {:id         "card_05"
+              :card-class "vertical bg_yellow mb_84_res"
+              :title      "Leistungsumfang und Termine"
+              :left-text  ""
+              :right-text "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."
+              :bg-image   "/img/moving_7.webp"})
+
+       (card {:id         "card_06"
+              :card-class "vertical bg_yellow mb_84_res"
+              :title      "Leistungsumfang und Termine"
+              :left-text  ""
+              :right-text "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."
+              :bg-image   "/img/moving_12.jpg"})]]]
+
+    [:div.bg_yellow
+     [:div.container.container_py
+      (appointment-top)
+
+      [:div.cards_container.mb_84_res
+       (card-time {:title "30min" :sub-title "Jeder" :text "Kennlernen oder kurze Abstimmung"})
+       (card-time {:title "60min" :sub-title "Jeder" :text "Ausgedehntes Kennenlernen"})
+       (card-time {:title "2 Std." :sub-title "Kunden" :text "Eine kurze Arbeitssession"})
+       (card-time {:title "3+ Std." :sub-title "Kunden" :text "Eine längere Arbeitssession"})]
+
+
+
+      [:div.max_w_768.mx_a.text_align_c_not_mob
+       [:p.p_mb.c_light.lh_1d4 "Wenn Du die Terminbuchung nicht verwenden möchtest, kannst Du gerne den Kalender als Referenz für verfügbare Zeitslots nutzen und uns deine Einladung stattdessen an "
+        [:span.fw_700 "termin@räumungsmeister.de"]
+        " senden."]]]]
+
+    [:div.bg_dark
+     [:div.container.py_140
+      (contact-form)]]
+
+    (footer)]])

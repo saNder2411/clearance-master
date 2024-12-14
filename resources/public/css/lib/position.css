@@ -1,0 +1,44 @@
+.absolute {position: absolute}
+.relative {position: relative}
+.fixed {position: fixed}
+.sticky {position: sticky}
+
+.inset_0 {inset: 0}
+.inset_x_0 {left: 0;right: 0}
+.inset_x_8 {left: 8px;right: 8px}
+.inset_y_0 {top: 0;bottom: 0}
+.inset_y_8 {top: 8px;bottom: 8px}
+
+.top_0 {top: 0}
+.top_2 {top: 2px}
+.top_4 {top: 4px}
+.top_6 {top: 6px}
+.top_8 {top: 8px}
+.top_10 {top: 10px}
+
+.left_0 {left: 0}
+.left_2 {left: 2px}
+.left_4 {left: 4px}
+.left_6 {left: 6px}
+.left_8 {left: 8px}
+.left_10 {left: 10px}
+
+.right_0 {right: 0}
+.right_2 {right: 2px}
+.right_4 {right: 4px}
+.right_6 {right: 6px}
+.right_8 {right: 8px}
+.right_10 {right: 10px}
+
+.bottom_0 {bottom: 0}
+.bottom_2 {bottom: 2px}
+.bottom_4 {bottom: 4px}
+.bottom_6 {bottom: 6px}
+.bottom_8 {bottom: 8px}
+.bottom_10 {bottom: 10px}
+
+.isolate {isolation: isolate}
+
+.z_-10 {z-index: -10}
+.z_10 {z-index: 10}
+.z_50 {z-index: 50}
