@@ -1,4 +1,4 @@
-(ns api.view.appointment-top)
+(ns view.components.appointment-top)
 
 (defn appointment-top []
   [:div.appointment_top

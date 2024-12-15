@@ -2,9 +2,9 @@
   (:require [io.pedestal.http :as http]
             [io.pedestal.http.route :as r]
             [io.pedestal.http.content-negotiation :refer [negotiate-content]]
-            [io.pedestal.interceptor :as i]
             [io.pedestal.http.ring-middlewares :as rm]
             [com.stuartsierra.component :as component]
+            [api.interceptors.core :as i]
             [api.app :as app]))
 
 (def routes (r/expand-routes app/routes))
@@ -20,18 +20,13 @@
       http/default-interceptors
       (update ::http/interceptors into custom-interceptors)))
 
-(defn inject-dependencies [deps]
-  (i/interceptor
-    {:name  ::inject-dependencies
-     :enter #(assoc % :dependencies deps)}))
-
 (defrecord WebServer [config xtdb]
   component/Lifecycle
 
   (start [rec]
     (if (:server rec)
       rec
-      (let [common-interceptors [(inject-dependencies rec) (rm/resource "public") content-negotiation]
+      (let [common-interceptors [(i/inject-deps rec) (rm/resource "public") content-negotiation i/not-found]
             server (-> config
                        (service-map common-interceptors)
                        http/create-server)]

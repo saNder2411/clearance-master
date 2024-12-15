@@ -1,7 +1,7 @@
 (ns api.app
   (:require [hiccup2.core :as h]
             [io.pedestal.interceptor :as i]
-            [api.view.layout :refer [layout]]))
+            [view.pages.main :as p]))
 
 (defn ok [body]
   {:status  200
@@ -11,23 +11,23 @@
                  (str))})
 
 (defn root [_req]
-  (-> (layout "/")
+  (-> (p/main "/")
       ok))
 
 (defn private-move [_req]
-  (-> (layout "private-move")
+  (-> (p/main "private-move")
       ok))
 
 (defn company-move [_req]
-  (-> (layout "company-move")
+  (-> (p/main "company-move")
       ok))
 
 (defn price [_req]
-  (-> (layout "price")
+  (-> (p/main "price")
       ok))
 
 (defn household-clearances [_req]
-  (-> (layout "household-clearances")
+  (-> (p/main "household-clearances")
       ok))
 
 (def contacts (i/interceptor {:name  ::contacts

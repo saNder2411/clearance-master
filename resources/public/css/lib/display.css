@@ -41,6 +41,11 @@
 .overflow_y_scroll {overflow-y: scroll}
 
 .gap_x_20 {gap: 0 1.25rem}
+.gap_5_per {gap: 5%}
+.gap_10_per {gap: 10%}
+.gap_24 {gap: 1.5rem}
+.gap_28 {gap: 1.75rem}
+.gap_32 {gap: 2rem}
 
 .gap_x_84_res {gap: 0 5.25rem}
 @media (max-width:1139px) {
@@ -58,6 +63,11 @@
     grid-template-columns: repeat(2, 1fr);
 }
 @media (max-width:767px) {
-    .grid_2_col {grid-template-columns: repeat(1, 1fr);}
+    .grid_2_col {grid-template-columns: repeat(1, 1fr)}
+
+}
+.flex_2_col {display: flex}
+@media (max-width:1023px) {
+    .flex_2_col {flex-direction: column}
 
 }

@@ -2,18 +2,24 @@
     max-width: 80rem;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-}
-.container_py {
-    padding-top: 90px;
-    padding-bottom: 90px;
+    padding: 5.625rem 1.5rem;
 }
 
+.tag {
+    padding: 0.625rem 1.25rem;
+    margin-right: 1.25rem;
+    margin-bottom: 1.25rem;
+    background: var(--light-a10);
+    border: 2px solid var(--light-a50);
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
 .contact_form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px 0;
+    gap: 3.125rem;
+    align-items: center;
 }
 
 .footer_links {
@@ -21,30 +27,34 @@
     grid-template-columns: repeat(4, 1fr);
 }
 
-@media (max-width:1139px) {
-    .container_py {
-        padding-top: 64px;
-        padding-bottom: 64px;
+@media (max-width:1023px) {
+    footer.container {
+        padding-bottom: 1.5rem;
     }
 }
-
 @media (max-width:939px) {
     .contact_form {
         grid-template-columns: repeat(1, 1fr);
+        gap: 4rem;
     }
 
     .footer_links {
         grid-template-columns: repeat(2, 1fr);
     }
-}
-@media (max-width:899px) {
-    .container_py {
-        padding-top: 44px;
-        padding-bottom: 44px;
-    }
 
 }
+
+@media (max-width:767px) {
+    .container {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+}
 @media (max-width:629px) {
+    svg.slogan_banner {
+        width: 100%;
+        height: 100%;
+    }
     .contact_form {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -53,8 +63,27 @@
         padding-left: 1rem;
         padding-right: 1rem;
     }
-
+    footer.container {
+        padding-bottom: 1rem;
+    }
     .footer_links {
         grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width:473px) {
+    .contact_form form label {
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+}
+@media (max-width:431px) {
+    .contact_form form label {
+        font-size: 0.688rem;
+    }
+}
+@media (max-width:405px) {
+    .contact_form form label {
+        font-size: 0.625rem;
     }
 }

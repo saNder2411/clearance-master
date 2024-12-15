@@ -121,9 +121,9 @@
 .max_w_768 {max-width:768px}
 .max_w_800 {max-width:800px}
 .max_w_1024 {max-width:1024px}
-.max_w_1280 {max-width:1280px}
-.max_w_80 {max-width: 80rem}
+.max_w_1280 {max-width: 80rem}
 .max_w_1536 {max-width:1536px}
+.min_h_20 {min-height:1.25rem}
 
 @media (max-width:767px) {
     .mob_w_100 {width: 100%}
