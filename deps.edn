@@ -7,9 +7,8 @@
            com.stuartsierra/component      {:mvn/version "1.1.0"}
            com.stuartsierra/component.repl {:mvn/version "1.0.0"}
            hiccup/hiccup                   {:mvn/version "2.0.0-RC4"}
-           io.github.nextjournal/clerk     {:git/sha "4c4983182061abd24201cd43fab6ee55dc16b7e8"}
-           }
+           io.github.nextjournal/clerk     {:git/sha "4c4983182061abd24201cd43fab6ee55dc16b7e8"}}
  :paths   ["src" "resources" "dev"]
- :aliases {:nextjournal/garden {:exec-fn nextjournal.clerk/serve!}
-           ;:dev {:main-opts ["-e" "(require, 'dev)" "-e" "(in-ns, 'dev)"]}
-           }}
+ :aliases {:nextjournal/garden {:exec-fn nextjournal.clerk/serve!}}}
+
+;:aliases {:dev {:main-opts ["-e" "(require, 'dev)" "-e" "(in-ns, 'dev)"]}}
