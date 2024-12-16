@@ -1,1 +1,2 @@
-{:project           "rm-rom-dev"}
+{:project           "rm-rom-dev"
+ :skip-inject-nrepl true}

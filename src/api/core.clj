@@ -11,8 +11,8 @@
                   [:xtdb])))
 
 (defn -main [opts]
-  (println "OPTS=> " opts )
-  (let [config (config/read-config)
+  (let [config (-> (config/read-config)
+                   (update-in [:server] merge opts))
         system (-> config services-system component/start-system)]
     (println "Starting system with config" config)
     (.addShutdownHook
