@@ -10,6 +10,9 @@
                  (h/html (h/raw "<!DOCTYPE html>"))
                  (str))})
 
+(defn root-head [_req]
+  {:status 200 :headers {"Content-Type" "text/plain"} :body "APP RUN"})
+
 (defn root [_req]
   (-> (p/main "/")
       ok))
@@ -34,7 +37,8 @@
                               :enter (fn [ctx]
                                        (assoc ctx :response {:status 200 :body "Contacts Page"}))}))
 
-(def routes #{["/" :get root :route-name :root]
+(def routes #{["/" :head root-head :route-name :root-head]
+              ["/" :get root :route-name :root]
               ["/private-move" :get private-move :route-name :private-move]
               ["/company-move" :get company-move :route-name :company-move]
               ["/price" :get price :route-name :price]
