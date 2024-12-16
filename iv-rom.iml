@@ -32,7 +32,6 @@
     <orderEntry type="library" name="Deps: org.clojure/spec.alpha:0.5.238" level="project" />
     <orderEntry type="library" name="Deps: org.eclipse.jetty.http2/http2-server:11.0.20" level="project" />
     <orderEntry type="library" name="Deps: org.eclipse.jetty.toolchain/jetty-jakarta-servlet-api:5.0.2" level="project" />
-    <orderEntry type="library" name="Deps: commons-fileupload:1.4" level="project" />
     <orderEntry type="library" name="Deps: io.opentelemetry/opentelemetry-api:1.36.0" level="project" />
     <orderEntry type="library" name="Deps: org.eclipse.jetty/jetty-alpn-client:11.0.20" level="project" />
     <orderEntry type="library" name="Deps: io.github.escherize/huff:0.1.0" level="project" />
@@ -52,7 +51,7 @@
     <orderEntry type="library" name="Deps: ring/ring-jetty-adapter:1.9.0" level="project" />
     <orderEntry type="library" name="Deps: io.github.nextjournal/garden-cron:23d5af" level="project" />
     <orderEntry type="library" name="Deps: com.stuartsierra/component:1.1.0" level="project" />
-    <orderEntry type="library" name="Deps: commons-io:2.6" level="project" />
+    <orderEntry type="library" name="Deps: commons-io:2.15.1" level="project" />
     <orderEntry type="library" name="Deps: com.google.guava/listenablefuture:9999.0-empty-to-avoid-conflict-with-guava" level="project" />
     <orderEntry type="library" name="Deps: org.eclipse.jetty.websocket/websocket-core-server:11.0.20" level="project" />
     <orderEntry type="library" name="Deps: org.clojure/tools.namespace:1.2.0" level="project" />
@@ -60,6 +59,7 @@
     <orderEntry type="library" name="Deps: fipp:0.6.26" level="project" />
     <orderEntry type="library" name="Deps: org.eclipse.jetty/jetty-plus:11.0.20" level="project" />
     <orderEntry type="library" name="Deps: com.fasterxml.jackson.core/jackson-core:2.15.2" level="project" />
+    <orderEntry type="library" name="Deps: org.apache.commons/commons-fileupload2-core:2.0.0-M1" level="project" />
     <orderEntry type="library" name="Deps: org.eclipse.jetty.websocket/websocket-servlet:11.0.20" level="project" />
     <orderEntry type="library" name="Deps: aero:1.1.6" level="project" />
     <orderEntry type="library" name="Deps: org.ow2.asm/asm:9.6" level="project" />
@@ -97,6 +97,7 @@
     <orderEntry type="library" name="Deps: ring/ring-codec:1.2.0" level="project" />
     <orderEntry type="library" name="Deps: org.clojure/core.rrb-vector:0.1.2" level="project" />
     <orderEntry type="library" name="Deps: org.eclipse.jetty.websocket/websocket-jakarta-client:11.0.20" level="project" />
+    <orderEntry type="library" name="Deps: org.ring-clojure/ring-websocket-protocols:1.12.1" level="project" />
     <orderEntry type="library" name="Deps: crypto-equality:1.0.1" level="project" />
     <orderEntry type="library" name="Deps: org.checkerframework/checker-qual:3.5.0" level="project" />
     <orderEntry type="library" name="Deps: cheshire:5.12.0" level="project" />
@@ -105,6 +106,7 @@
     <orderEntry type="library" name="Deps: org.eclipse.jetty/jetty-jndi:11.0.20" level="project" />
     <orderEntry type="library" name="Deps: org.eclipse.jetty/jetty-io:11.0.20" level="project" />
     <orderEntry type="library" name="Deps: org.clojure/tools.reader:1.4.1" level="project" />
+    <orderEntry type="library" name="Deps: org.ring-clojure/ring-core-protocols:1.12.1" level="project" />
     <orderEntry type="library" name="Deps: io.opentracing/opentracing-util:0.33.0" level="project" />
     <orderEntry type="library" name="Deps: org.babashka/http-client:0.4.15" level="project" />
     <orderEntry type="library" name="Deps: clj-stacktrace:0.2.8" level="project" />
@@ -122,7 +124,7 @@
     <orderEntry type="library" name="Deps: org.eclipse.jetty/jetty-server:11.0.20" level="project" />
     <orderEntry type="library" name="Deps: org.eclipse.jetty.toolchain/jetty-jakarta-websocket-api:2.0.0" level="project" />
     <orderEntry type="library" name="Deps: com.google.code.findbugs/jsr305:3.0.2" level="project" />
-    <orderEntry type="library" name="Deps: ring/ring-core:2.0.0-alpha1" level="project" />
+    <orderEntry type="library" name="Deps: ring/ring-core:1.12.1" level="project" />
     <orderEntry type="library" name="Deps: org.clojure/core.cache:1.0.225" level="project" />
     <orderEntry type="library" name="Deps: org.ow2.asm/asm-tree:9.6" level="project" />
     <orderEntry type="library" name="Deps: net.clojars.kelveden/ring-jwt:2.4.0" level="project" />
@@ -131,5 +133,6 @@
     <orderEntry type="library" name="Deps: javax.xml.bind/jaxb-api:2.4.0-b180830.0359" level="project" />
     <orderEntry type="library" name="Deps: org.clj-commons/pretty:3.0.0" level="project" />
     <orderEntry type="library" name="Deps: org.eclipse.jetty/jetty-alpn-server:11.0.20" level="project" />
+    <orderEntry type="library" name="Deps: http-kit:2.8.0-SNAPSHOT" level="project" />
   </component>
 </module>
