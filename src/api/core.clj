@@ -10,7 +10,8 @@
                   (web-server/create-web-server config)
                   [:xtdb])))
 
-(defn -main []
+(defn -main [opts]
+  (println "OPTS=> " opts )
   (let [config (config/read-config)
         system (-> config services-system component/start-system)]
     (println "Starting system with config" config)
