@@ -11,7 +11,7 @@
                  (str))})
 
 (defn root-head [_req]
-  {:status 200 :headers {"Content-Type" "text/plain"} :body "APP RUN"})
+  {:status 200 :headers {"Content-Type" "text/plain"} :body "The App is available"})
 
 (defn root [_req]
   (-> (p/main "/")

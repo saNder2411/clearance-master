@@ -1,1 +1,2 @@
-{:project "hot-fiddleheads-38"}
+{:project           "rm-rom-dev"
+ :skip-inject-nrepl true}
