@@ -8,5 +8,5 @@
            com.stuartsierra/component.repl {:mvn/version "1.0.0"}
            hiccup/hiccup                   {:mvn/version "2.0.0-RC4"}}
  :paths   ["src" "resources" "dev"]
- :aliases {:nextjournal/garden {:exec-fn api.core/-main}
-           :dev {:main-opts ["-e" "(require, 'dev)" "-e" "(in-ns, 'dev)"]}}}
+ :aliases {:dev {:main-opts ["-e" "(require, 'dev)" "-e" "(in-ns, 'dev)"]}
+           :nextjournal/garden {:exec-fn api.core/-main}}}

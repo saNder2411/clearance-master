@@ -11,7 +11,7 @@
             [view.components.slogan-banner :refer [slogan-banner]]
             [view.components.contact-form :refer [contact-form]]))
 
-(defn main [route]
+(defn main-view [route]
   (layout route
           [:main
            (main-banner)
@@ -35,25 +35,33 @@
              (card {:id          "card_00"
                     :card-class  "bg_light mb_84_res"
                     :right-class "bg_light_245"
-                    :title       "Leistungsumfang und Termine"
+                    :title       "Entrümpelung"
                     :left-text   ""
-                    :right-text  "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."
+                    :right-text  "Fachgerechte Entrümpelung     von Wohnungen, Häusern, Kellern, Dachböden, Garagen und anderen Räumen.\n Inklusive Grobreinigung nach der Räumung."
                     :bg-image    "/img/moving_0.jpeg"})
 
              (card {:id          "card_01"
                     :card-class  "bg_light mb_84_res"
                     :right-class "bg_light_245"
-                    :title       "Leistungsumfang und Termine"
+                    :title       "Haushaltsauflösung"
                     :left-text   ""
-                    :right-text  "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."
+                    :right-text  "Komplette Auflösung von Haushalten, inklusive Möbelabbau und Entsorgung\n\nInklusive Grobreinigung nach der Auflösung."
                     :bg-image    "/img/moving_1.jpg"})
 
              (card {:id          "card_02"
                     :card-class  "bg_light mb_84_res"
                     :right-class "bg_light_245"
-                    :title       "Leistungsumfang und Termine"
+                    :title       "Räumung von Gewerbeobjekten"
                     :left-text   ""
-                    :right-text  "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."
+                    :right-text  "Räumung von Büros, Lagerhallen, Geschäftsräumen und anderen Gewerbeflächen Inklusive Grobreinigung nach der Räumung"
+                    :bg-image    "/img/moving_2.jpg"})
+
+             (card {:id          "card_03"
+                    :card-class  "bg_light mb_84_res"
+                    :right-class "bg_light_245"
+                    :title       "Grundreinigung"
+                    :left-text   ""
+                    :right-text  "Gründliche Reinigung von Wohnungen, Häusern und Gewerbeobjekten nach Räumung"
                     :bg-image    "/img/moving_2.jpg"})
 
              [:div.max_w_800.mx_a.text_align_c_not_mob

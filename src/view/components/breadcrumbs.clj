@@ -6,7 +6,7 @@
                      "private-move" "Privatumzug"
                      "company-move" "Firmenumzug"
                      "price" "Preisanfrage"
-                     "household-clearances" "Haushaltsauflösungen"
+                     "privacy-policy" "Datenschutzerklärung"
                      " ")]
     [:nav.flex.align_c.fs_14.min_h_20
      [:svg {:viewBox "64 64 896 896" :focusable false :data-icon "home" :width 14 :height 14}
