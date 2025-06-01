@@ -4,14 +4,10 @@
 (defn privacy-policy-view [route]
   (layout route
           [:main
-
-
            [:div.container
             [:h1.h_mb.fw_900 "Datenschutzerklärung"]
             [:p.mb_10.fw_900 "Räumungsmeister"]
             [:p "Inhaber: Johann Romanenko"]]
-
-
 
            [:div.bg_light_242
             [:div.container
@@ -33,7 +29,6 @@
               [:li.mb_6 "• Angebotserstellung und Vertragsabwicklung"]
               [:li.mb_6 "• Rechnungsstellung und Buchhaltung"]
               [:li.mb_6 "• Kundenbetreuung und Serviceleistungen"]]
-
 
              [:h2.mb_10.fs_28.fw_600 "\u2060Rechtsgrundlage der Verarbeitung"]
              [:p.mb_42 "Die Verarbeitung Ihrer Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung) oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Geschäftsabwicklung).  \n"]
@@ -58,7 +53,4 @@
              [:p.mb_42 "Wir setzen technische und organisatorische Maßnahmen ein, um Ihre Daten vor unbefugtem Zugriff, Verlust oder Missbrauch zu schützen."]
 
              [:h2.mb_10.fs_28.fw_600 "Änderungen der Datenschutzerklärung"]
-             [:p.mb_42 "Diese Datenschutzerklärung kann bei Bedarf aktualisiert werden, um gesetzlichen Anforderungen oder Änderungen unserer Dienstleistungen gerecht zu werden."]
-             ]]
-
-           ]))
+             [:p.mb_42 "Diese Datenschutzerklärung kann bei Bedarf aktualisiert werden, um gesetzlichen Anforderungen oder Änderungen unserer Dienstleistungen gerecht zu werden."]]]]))

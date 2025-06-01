@@ -9,7 +9,8 @@
             [view.components.card-time :refer [card-time]]
             [view.components.card-text :refer [card-text]]
             [view.components.slogan-banner :refer [slogan-banner]]
-            [view.components.contact-form :refer [contact-form]]))
+            [view.components.contact-form :refer [contact-form]]
+            [api.lib.core :refer [random-int-id]]))
 
 (defn main-view [route]
   (layout route
@@ -29,36 +30,36 @@
            [:div.bg_light_242
             [:div.container
              [:div.max_w_800.mx_a.text_align_c_not_mob.mb_60_res
-              [:h2.h_mb.fs_28.w_600 "Leistungsumfang und Termine"]
+              [:h2.h_mb.fs_28.w_600 "Leistungsumfang von Räumungsmeister"]
               [:p "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."]]
 
-             (card {:id          "card_00"
+             (card {:id          (random-int-id "crd-0")
                     :card-class  "bg_light mb_84_res"
-                    :right-class "bg_light_245"
+                    :right-class "bg_light_245 fs_24 fst_it"
                     :title       "Entrümpelung"
                     :left-text   ""
-                    :right-text  "Fachgerechte Entrümpelung     von Wohnungen, Häusern, Kellern, Dachböden, Garagen und anderen Räumen.\n Inklusive Grobreinigung nach der Räumung."
-                    :bg-image    "/img/moving_0.jpeg"})
+                    :right-text  "Fachgerechte Entrümpelung von Wohnungen, Häusern, Kellern, Dachböden, Garagen und anderen Räumen Inklusive Grobreinigung nach der Räumung."
+                    :bg-image    "/img/moving_1.jpg"})
 
-             (card {:id          "card_01"
+             (card {:id          (random-int-id "crd-0")
                     :card-class  "bg_light mb_84_res"
-                    :right-class "bg_light_245"
+                    :right-class "bg_light_245 fs_24 fst_it"
                     :title       "Haushaltsauflösung"
                     :left-text   ""
                     :right-text  "Komplette Auflösung von Haushalten, inklusive Möbelabbau und Entsorgung\n\nInklusive Grobreinigung nach der Auflösung."
-                    :bg-image    "/img/moving_1.jpg"})
+                    :bg-image    "/img/moving_0.jpeg"})
 
-             (card {:id          "card_02"
+             (card {:id          (random-int-id "crd-0")
                     :card-class  "bg_light mb_84_res"
-                    :right-class "bg_light_245"
+                    :right-class "bg_light_245 fs_24 fst_it"
                     :title       "Räumung von Gewerbeobjekten"
                     :left-text   ""
                     :right-text  "Räumung von Büros, Lagerhallen, Geschäftsräumen und anderen Gewerbeflächen Inklusive Grobreinigung nach der Räumung"
                     :bg-image    "/img/moving_2.jpg"})
 
-             (card {:id          "card_03"
+             (card {:id          (random-int-id "crd-0")
                     :card-class  "bg_light mb_84_res"
-                    :right-class "bg_light_245"
+                    :right-class "bg_light_245 fs_24 fst_it"
                     :title       "Grundreinigung"
                     :left-text   ""
                     :right-text  "Gründliche Reinigung von Wohnungen, Häusern und Gewerbeobjekten nach Räumung"
@@ -72,38 +73,60 @@
 
            [:div.bg_light
             [:div.container
-             [:div.max_w_800.mb_60_res
-              [:h2.h_mb.fs_28.fw_600 "Leistungsumfang und Termine"]
-              [:p "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."]]
+             [:div.max_w_800.mb_60_res.mx_a.text_align_c_not_mob
+              [:h2.h_mb.fs_28.fw_600 "Ihr zuverlässiger Partner für schnelle, professionelle und individuelle Haushaltsauflösungen!"]
+              [:p.p_mb "Benötigen Sie eine komplette Räumung von Häusern, Wohnungen, Büros oder Lagerhallen? Wir sind für Sie da! Unser erfahrenes Team sorgt für eine zügige, gründliche und umweltgerechte Müllentsorgung – alles in kürzester Zeit und stets in enger Abstimmung mit Ihren Wünschen."]
+              [:h2.h_mb.fs_22.fw_600 "Was wir für Sie tun"]]
 
              [:div.grid_2_col.gap_x_84_res
-              (card {:id         "card_03"
+              (card {:id         (random-int-id "crd-1")
                      :card-class "vertical bg_yellow mb_84_res"
-                     :title      "Leistungsumfang und Termine"
+                     :title      "Komplette Haushaltsauflösungen"
                      :left-text  ""
-                     :right-text "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."
+                     :right-class "fs_24 fst_it"
+                     :right-text "Wir übernehmen alles, von der Planung bis zur finalen Räumung, damit Sie sich um nichts kümmern müssen."
                      :bg-image   "/img/moving_3.jpeg"})
 
-              (card {:id         "card_04"
+              (card {:id         (random-int-id "crd-1")
                      :card-class "vertical bg_yellow mb_84_res"
-                     :title      "Leistungsumfang und Termine"
+                     :title      "Effiziente Büro und Lagerhallenräumung"
                      :left-text  ""
-                     :right-text "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."
+                     :right-class "fs_24 fst_it"
+                     :right-text "Schnell, sauber und zuverlässig, damit Ihr Geschäft schnell wieder läuft."
                      :bg-image   "/img/moving_4.jpg"})]
 
              [:div.grid_2_col.gap_x_84_res
-              (card {:id         "card_05"
+              (card {:id         (random-int-id "crd-1")
                      :card-class "vertical bg_yellow mb_84_res"
-                     :title      "Leistungsumfang und Termine"
+                     :title      "Flexible Termine"
                      :left-text  ""
-                     :right-text "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."
+                     :right-class "fs_24 fst_it"
+                     :right-text "Wir richten uns nach Ihrem Zeitplan, um die Räumung so bequem wie möglich für Sie zu gestalten."
                      :bg-image   "/img/moving_7.webp"})
 
-              (card {:id         "card_06"
+              (card {:id         (random-int-id "crd-1")
                      :card-class "vertical bg_yellow mb_84_res"
-                     :title      "Leistungsumfang und Termine"
+                     :title      "Vollständige Müll und Sperrmüllentsorgung"
                      :left-text  ""
-                     :right-text "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."
+                     :right-class "fs_24 fst_it"
+                     :right-text "Umweltgerecht, fachgerecht und nach den gesetzlichen Vorgaben, inklusive Recycling."
+                     :bg-image   "/img/moving_12.jpg"})]
+
+             [:div.grid_2_col.gap_x_84_res
+              (card {:id         (random-int-id "crd-1")
+                     :card-class "vertical bg_yellow mb_84_res"
+                     :title      "Diskrete und respektvolle Durchführung"
+                     :left-text  ""
+                     :right-class "fs_24 fst_it"
+                     :right-text "Wir behandeln Ihr Eigentum mit Sorgfalt und Respekt, auch bei sensiblen Objekten."
+                     :bg-image   "/img/moving_7.webp"})
+
+              (card {:id         (random-int-id "crd-1")
+                     :card-class "vertical bg_yellow mb_84_res"
+                     :title      "Individuelle Beratung & kostenloses Angebot"
+                     :left-text  ""
+                     :right-class "fs_24 fst_it"
+                     :right-text "Wir finden die beste Lösung für Ihre Bedürfnisse und erstellen Ihnen ein unverbindliches Angebot."
                      :bg-image   "/img/moving_12.jpg"})]]]
 
            [:div.bg_yellow
@@ -129,7 +152,7 @@
 
               [:div.pl_60.p_0_mob
                [:h2.h_mb.fs_40.fw_900.c_dark "Was macht uns einzigartig"]
-               [:p.c_dark.p_mb "Bei loskan.io konzentrieren wir uns auf eine nahtlose und dynamische Integration von No-Code, Low-Code und Full-Stack-Entwicklung. Unser Ansatz ermöglicht es uns, einfache Automatisierungen zu übertreffen und komplexe, maßgeschneiderte Geschäftsprozesse zu unterstützen."]
+               [:p.c_dark.p_mb "Bei konzentrieren wir uns auf eine nahtlose und dynamische Integration von No-Code, Low-Code und Full-Stack-Entwicklung. Unser Ansatz ermöglicht es uns, einfache Automatisierungen zu übertreffen und komplexe, maßgeschneiderte Geschäftsprozesse zu unterstützen."]
                [:p.c_dark.p_mb "Unser Alleinstellungsmerkmal ist die intensive Verbindung von No-Code-Methoden mit individueller Softwareentwicklung, was eine schnelle Projektumsetzung und eine erhebliche Steigerung der betrieblichen Effizienz ermöglicht. Unsere speziell entwickelten Web-Dashboards und Apps sind flexibel und passen sich perfekt in Ihre\nArbeitsabläufe ein."]
                [:p.c_dark.p_mb "Entdecke wie Deine Geschäftsprozesse durch individuell angepasste Automatisierungslösungen transformiert werden können."]
 

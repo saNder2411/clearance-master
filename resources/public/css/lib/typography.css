@@ -28,6 +28,9 @@
 .lh_1d4 {line-height:1.4}
 .lh_24 {line-height:24px}
 
+.fst_it {font-style: italic}
+.tx_up {text-transform: uppercase}
+
 .text_align_c {text-align: center}
 
 .text_align_c_not_mob {text-align: center}
