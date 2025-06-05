@@ -1,4 +1,4 @@
-input:not([type="checkbox"]) {
+input:not([type="checkbox"]),textarea {
     display: block;
     width: 100%;
     position: relative;
@@ -9,24 +9,29 @@ input:not([type="checkbox"]) {
     border-width: 1px;
     appearance: none;
 }
-input:focus {
+input:focus, textarea:focus {
     outline: 2px solid transparent;
     outline-offset: 2px;
     transition: none;
 }
 
+textarea {
+    resize: none;
+}
+
 .input_l {
     color: var(--color-light);
-    background-color: var(--light);
-    border-color: var(--dark-a10);
+    background-color: var(--light-a90);
+    border-color: var(--dark-a05);
     box-shadow: var(--light-shadow-input);
 
 }
 .input_l:hover,.input_l:focus {
-    border-color: var(--dark-a20);
+    border-color: var(--dark-a15);
 }
 .input_l::placeholder {
-    color:var(--dark-a30);
+    color:var(--dark-a40);
+    font-style: italic;
 }
 
 .input_d {
@@ -39,6 +44,7 @@ input:focus {
 }
 .input_d::placeholder {
     color: var(--light-a30);
+    font-style: italic;
 }
 
 label {
@@ -156,6 +162,7 @@ input[type="checkbox"]:not(#nav_mob_switch):active:not(:checked)::after {
 }
 
 .checkbox_l {
+    background-color: var(--light-a90);
     border: 1px solid var(--dark-a15);
     box-shadow: var(--light-shadow-checkbox);
     transition: all 0.3s;

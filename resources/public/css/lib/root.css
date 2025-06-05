@@ -13,13 +13,20 @@
     --color-dark:rgba(255,255,255,1);
     --color-social:rgba(153,153,153,1);
 
+    --dark-a05:rgba(9,9,11,.05);
     --dark-a10:rgba(9,9,11,.1);
     --dark-a15:rgba(9,9,11,.15);
     --dark-a20:rgba(9,9,11,.2);
+    --dark-a25:rgba(9,9,11,.25);
     --dark-a30:rgba(9,9,11,.3);
+    --dark-a35:rgba(9,9,11,.35);
+    --dark-a40:rgba(9,9,11,.4);
+    --dark-a50:rgba(9,9,11,.5);
+    --dark-a80:rgba(9,9,11,.8);
     --dark-a90:rgba(9,9,11,.9);
 
     --light-a05:rgba(255,255,255,.05);
+    --light-a07:rgba(255,255,255,.07);
     --light-a10:rgba(255,255,255,.1);
     --light-a15:rgba(255,255,255,.15);
     --light-a20:rgba(255,255,255,.2);

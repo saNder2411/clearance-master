@@ -1,7 +1,7 @@
 (ns view.pages.privacy-policy
   (:require [view.components.layout :refer [layout]]))
 
-(defn privacy-policy-view [route]
+(defn privacy-policy-page [route]
   (layout route
           [:main
            [:div.container
@@ -15,12 +15,12 @@
              [:p.mb_42 "Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TMG). In dieser Datenschutzerklärung informieren wir Sie über die wichtigsten Aspekte der Datenverarbeitung im Rahmen unserer Website und unserer Dienstleistungen."]
 
              [:h2.mb_10.fs_28.fw_600 "Verantwortliche Stelle"]
-             [:p.mb_6 "Verantwortlich für die Datenverarbeitung ist:"]
-             [:p.mb_6.fw_700 "Räumungsmeister"]
+             [:p.mb_6 "Verantwortlich für die Datenverarbeitung ist: "
+              [:span.fw_700 "Räumungsmeister"]]
              [:p.mb_6 "Inhaber: Johann Romanenko"]
-             [:p.mb_6 "[Adresse des Unternehmens]"]
-             [:p.mb_6 "[E-Mail-Adresse]"]
-             [:p.mb_42 "[Telefonnummer]"]
+             [:p.mb_6 "Adresse: Nefflenallee 21, 74523 Schwäbisch Hall"]
+             [:p.mb_6 "E-Mail: info@raemungsmeister.de"]
+             [:p.mb_42 "Mobil: +49 155 61383039"]
 
              [:h2.mb_10.fs_28.fw_600 "Erhebung und Verarbeitung personenbezogener Daten"]
              [:p.mb_6 "Wir erheben, verarbeiten und nutzen personenbezogene Daten nur, soweit dies erforderlich ist, um Ihnen unsere Dienstleistungen anzubieten. Dies umfasst insbesondere:"]
@@ -31,7 +31,7 @@
               [:li.mb_6 "• Kundenbetreuung und Serviceleistungen"]]
 
              [:h2.mb_10.fs_28.fw_600 "\u2060Rechtsgrundlage der Verarbeitung"]
-             [:p.mb_42 "Die Verarbeitung Ihrer Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung) oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Geschäftsabwicklung).  \n"]
+             [:p.mb_42 "Die Verarbeitung Ihrer Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung) oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Geschäftsabwicklung)."]
 
              [:h2.mb_10.fs_28.fw_600 "Weitergabe von Daten"]
              [:p.mb_42 "Ihre Daten werden nicht an Dritte weitergegeben, es sei denn, dies ist zur Vertragserfüllung notwendig oder aufgrund gesetzlicher Vorschriften erforderlich."]

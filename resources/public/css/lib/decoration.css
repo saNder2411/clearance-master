@@ -1,3 +1,12 @@
+.border_1 {border-width: 1px; border-style: solid;}
+.border_2 {border-width: 2px; border-style: solid;}
+.border_b_1 {border-bottom: 1px solid #000;}
+
+
+.border_light {border-color: var(--color-light)}
+.border_dark {border-color: var(--color-dark)}
+.border_yellow {border-color: var(--yellow)}
+
 .border_r_4 {border-radius: 4px}
 .border_r_5 {border-radius: 5px}
 .border_r_6 {border-radius: 6px}

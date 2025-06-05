@@ -1,6 +1,7 @@
 .fs_10 {font-size:10px}
 .fs_12 {font-size:12px}
 .fs_14 {font-size:14px}
+.fs_14_mob {font-size:14px}
 .fs_16 {font-size:16px}
 .fs_18 {font-size:18px}
 .fs_20 {font-size:20px}
@@ -14,7 +15,13 @@
 .fs_36 {font-size:36px}
 .fs_38 {font-size:38px}
 .fs_40 {font-size:40px}
+.fs_42 {font-size:42px}
+.fs_44 {font-size:44px}
+.fs_46 {font-size:46px}
+.fs_48 {font-size:48px}
+.fs_50 {font-size:50px}
 
+.fw_100 {font-weight:100}
 .fw_200 {font-weight:200}
 .fw_300 {font-weight:300}
 .fw_400 {font-weight:400}
@@ -37,10 +44,35 @@
 @media (max-width:768px) {
     .text_align_c_not_mob {text-align: left}
 }
+@media (max-width:388px) {
+    .fs_14_mob {
+        font-size: 13px;
+    }
+}
+@media (max-width:370px) {
+    .fs_14_mob {
+        font-size: 12px;
+    }
+}
+@media (max-width:351px) {
+    .fs_14_mob {
+        font-size: 11px;
+    }
+}
+
+@media (max-width:333px) {
+    .fs_14_mob {
+        font-size: 10px;
+    }
+}
 .uppercase {text-transform: uppercase}
+.underline {text-decoration: underline}
+
 
 .c_light {color: var(--color-light)}
 .c_light_sec {color: var(--color-light-sec)}
 .c_light_no_active {color: var(--color-light-no-active)}
 .c_dark {color: var(--color-dark)}
 .c_social {color: var(--color-social)}
+.c_yellow {color: var(--yellow)}
+

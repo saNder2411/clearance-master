@@ -15,6 +15,9 @@
 .top_6 {top: 6px}
 .top_8 {top: 8px}
 .top_10 {top: 10px}
+.top_20 {top: 20px}
+.top_24p5 {top: 24.5px}
+.top_73p5 {top: 73.5px}
 
 .left_0 {left: 0}
 .left_2 {left: 2px}
@@ -41,4 +44,5 @@
 
 .z_-10 {z-index: -10}
 .z_10 {z-index: 10}
+.z_40 {z-index: 40}
 .z_50 {z-index: 50}

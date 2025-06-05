@@ -6,5 +6,6 @@
 .bg_dark {background: var(--dark)}
 .bg_dark_sec {background: var(--dark-sec)}
 .bg_blur {background: rgba(255, 255, 255, 0.8);backdrop-filter: blur(4px)}
+.bg_d_blur {background: rgba(0, 0, 0, 0.6);backdrop-filter: blur(4px)}
 
 
