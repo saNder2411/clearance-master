@@ -2,8 +2,8 @@
   (:require [hiccup2.core :as h]
             [io.pedestal.interceptor :as i]
             [view.pages.main :refer [main-page]]
-            [view.pages.private-move :refer [private-move-page]]
-            [view.pages.company-move :refer [company-move-page]]
+            [view.pages.house-clearing :refer [house-clearing-page]]
+            [view.pages.commercial-clearing :refer [commercial-clearing-page]]
             [view.pages.pricing :refer [pricing-page]]
             [view.pages.privacy-policy :refer [privacy-policy-page]]))
 
@@ -21,12 +21,13 @@
   (-> (main-page "/")
       ok))
 
-(defn private-move [_req]
-  (-> (private-move-page "private-move")
+(defn house-clearing [_req]
+  (println _req)
+  (-> (house-clearing-page "house-clearing")
       ok))
 
-(defn company-move [_req]
-  (-> (company-move-page "company-move")
+(defn commercial-clearing [_req]
+  (-> (commercial-clearing-page "commercial-clearing")
       ok))
 
 (defn pricing [_req]
@@ -43,8 +44,8 @@
 
 (def routes #{["/" :head root-head :route-name :root-head]
               ["/" :get root :route-name :root]
-              ["/private-move" :get private-move :route-name :private-move]
-              ["/company-move" :get company-move :route-name :company-move]
+              ["/house-clearing" :get house-clearing :route-name :house-clearing]
+              ["/commercial-clearing" :get commercial-clearing :route-name :commercial-clearing]
               ["/pricing" :get pricing :route-name :pricing]
               ["/privacy-policy" :get privacy-policy :route-name :privacy-policy]
               ["/contacts" :get [contacts]]})

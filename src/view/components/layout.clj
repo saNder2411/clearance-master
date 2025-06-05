@@ -1,6 +1,7 @@
 (ns view.components.layout
   (:require [hiccup.page :as hp]
-            [view.components.lists :refer [link-list]]))
+            [view.components.lists :refer [link-list item-list]]
+            [view.components.elements :refer [icon-text-row]]))
 
 (defn- contact-tab []
   [:div.sticky.top_0.z_50.bg_d_blur
@@ -17,11 +18,11 @@
      [:img {:alt "logo" :width 30 :height 30 :src "/logo/min_logo.svg"}]]
 
     [:nav.desc_nav
-     [:a.nav_i.fw_600 {:class (if (= route "private-move") " nav_i_active" "") :href "/private-move"}
-      "Privatumzug"]
+     [:a.nav_i.fw_600 {:class (if (= route "house-clearing") " nav_i_active" "") :href "/house-clearing"}
+      "Privat Hausauflösung"]
 
-     [:a.nav_i.fw_600.ml_32 {:class (if (= route "company-move") " nav_i_active" "") :href "/company-move"}
-      "Firmenumzug"]
+     [:a.nav_i.fw_600.ml_32 {:class (if (= route "commercial-clearing") " nav_i_active" "") :href "/commercial-clearing"}
+      "Gewerbliche Räumung"]
 
      [:a.nav_i.fw_600.ml_32 {:class (if (= route "pricing") " nav_i_active" "") :href "/pricing"}
       "Preisanfrage"]
@@ -37,47 +38,38 @@
 
     [:div.mobile_nav_container
      [:nav.mobile_nav
-      [:a.flex.py_6.c_light.fw_500.fs_14.lh_1d6 {:class (if (= route "private-move") " mob_nav_active" "") :href "/private-move"} "Privatumzug"]
-      [:a.flex.py_6.c_light.fw_500.fs_14.lh_1d6 {:class (if (= route "company-move") " mob_nav_active" "") :href "/company-move"} "Firmenumzug"]
+      [:a.flex.py_6.c_light.fw_500.fs_14.lh_1d6 {:class (if (= route "house-clearing") " mob_nav_active" "") :href "/house-clearing"} "Privat Hausauflösung"]
+      [:a.flex.py_6.c_light.fw_500.fs_14.lh_1d6 {:class (if (= route "commercial-clearing") " mob_nav_active" "") :href "/commercial-clearing"} "Gewerbliche Räumung"]
       [:a.flex.py_6.c_light.fw_500.fs_14.lh_1d6 {:class (if (= route "price") " mob_nav_active" "") :href "/price"} "Preisanfrage"]
       [:a.flex.py_6.c_light.fw_500.fs_14.lh_1d6 {:class (if (= route "privacy-policy") " mob_nav_active" "") :href "/privacy-policy"} "Datenschutzerklärung"]]]]])
 
-
-
-
 (defn- footer []
   [:footer.container
-   [:h2.mt_20.mb_8
+   [:h2.mt_20.mb_60
     [:a {:href "/"}
      [:img {:alt "logo" :width 360 :src "/logo/main_logo_1.svg"}]]]
 
-   [:div.fs_18.fw_500.mb_18
-    [:div.flex.flex_wrap.align_c.mb_4
-     [:img {:alt "email" :width 18 :src "/img/mail.svg"}]
-     [:span.ml_8 "info@raemungsmeister.de"]]
-    [:div.flex.flex_wrap.align_c
-     [:img {:alt "phone" :width 18 :src "/img/phone.svg"}]
-     [:span.ml_8 "+49 155 61383039"]]]
+   [:div.footer_links.mb_80
+    [:div.mb_32]
 
-   #_[:div.footer_links.mb_80
-      [:div.mb_32
-       [:h2.mb_24 "Unternehmen"]
+    [:div.mb_32
+     [:h2.mb_24 "Services"]
 
-       (link-list {:links [["/" "Startseite"] ["/" "Referenzen"] ["/" "Impressum"] ["/" "Datenschutz"] ["/" "Kontakt"] ["/" "FAQ"]]})]
+     (link-list {:links [["/house-clearing" "Privat Hausauflösung"] ["/commercial-clearing" "Gewerbliche Räumung"] ["/pricing" "Preisanfrage"] ["/privacy-policy" "Datenschutzerklärung"]]})]
 
-      [:div.mb_32
-       [:h2.mb_24 "Anwendungsfälle"]
+    [:div.mb_32
+     [:h2.mb_24 "Öffnungszeiten"]
 
-       (link-list {:links [["/" "Marketing Automation"] ["/" "Kundenzufriedenheit"] ["/" "Interne Prozesse"] ["/" "Mitarbeitergewinnung"] ["/" "KI Integration"]]})]
+     (item-list {:items [(icon-text-row {:img-src "/img/calendar.svg" :text "Montag - Freitag"})
+                         (icon-text-row {:img-src "/img/clock-9.svg" :text "08.00 - 16.00 Uhr"})]})]
 
-      [:div.mb_32
-       [:h2.mb_24 "Dienstleistung"]
+    [:div.mb_32
+     [:h2.mb_24 "Kontakt"]
 
-       (link-list {:links [["/" "Softwareentwicklung"] ["/" "Digitale Transformation"] ["/" "No-Code/Low-Code"] ["/" "App-Entwicklung"] ["/" "Web-Plattform Entwicklung"] ["/" "Schnittstellen Entwicklung"] ["/" "Smarte Prozessoptimierung"]]})]
-
-      [:div.mb_32
-       [:h2.mb_24 "Wissen und Ressourcen"]
-       (link-list {:links [["/" "Blog"] ["/" "eBooks"] ["/" "Glossar"] ["/" "Kostenlose Kurse"] ["/" "Downloads"]]})]]
+     (item-list {:items [(icon-text-row {:img-src "/img/mail.svg" :text "info@raemungsmeister.de"})
+                         (icon-text-row {:img-src "/img/phone.svg" :text "+49 155 61383039"})
+                         (icon-text-row {:img-src "/img/map-pin-house.svg" :text "Nefflenallee 21, 74523 Schwäbisch Hall"})
+                         (icon-text-row {:img-src "/img/graduation-cap.svg" :text "DE326222601"})]})]]
 
    [:div.flex.flex_wrap.align_c.justify_sb
     [:span.c_social.mb_20.mr_32 "© 2016-2023 räumungsmeister"]

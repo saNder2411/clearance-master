@@ -1,4 +1,4 @@
-(ns view.pages.company-move
+(ns view.pages.commercial-clearing
   (:require [view.components.layout :refer [layout]]
             [view.components.sections :refer [main-banner breadcrumbs slogan-label slogan-row appointment-header]]
             [view.components.slideshow :refer [slideshow]]
@@ -7,7 +7,7 @@
             [view.components.lists :refer [tag-list]]
             [api.lib.core :refer [random-int-id]]))
 
-(defn company-move-page [route]
+(defn commercial-clearing-page [route]
   (layout route
           [:main
            (main-banner {:title "Professionelle Haushaltsauflösungen"
