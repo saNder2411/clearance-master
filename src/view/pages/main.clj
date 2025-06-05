@@ -61,7 +61,7 @@
                     :title       "Grundreinigung"
                     :left-text   ""
                     :right-text  "Gründliche Reinigung von Wohnungen, Häusern und Gewerbeobjekten nach Räumung"
-                    :bg-image    "/img/basic-cleaning.png"})
+                    :bg-image    "/img/general-cleaning.png"})
 
              [:div.max_w_800.mx_a.text_align_c_not_mob
               [:p.p_mb "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."]

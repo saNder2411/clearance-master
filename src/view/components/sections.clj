@@ -1,6 +1,6 @@
 (ns view.components.sections)
 
-(defn main-banner [{:keys [title p1 p2 btn-label img-src] :or {btn-label "Erfahren Sie mehr über uns" img-src "/img/pro-household_0.png"}}]
+(defn main-banner [{:keys [title p1 p2 btn-label img-src] :or {btn-label "Erfahren Sie mehr über uns" img-src "/img/pro-household.png"}}]
   [:div.container.main_banner
    [:div.main_banner_text
     [:h1.h_mb.fw_900 title]
