@@ -64,6 +64,8 @@ button, .link-btn {
     background-image: none;
     cursor: pointer;
 }
+.link-btn {text-align: center}
+
 button::before, .link-btn::before {
     content: "";
     position: absolute;

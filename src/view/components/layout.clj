@@ -40,7 +40,7 @@
      [:nav.mobile_nav
       [:a.flex.py_6.c_light.fw_500.fs_14.lh_1d6 {:class (if (= route "house-clearing") " mob_nav_active" "") :href "/house-clearing"} "Privat Hausauflösung"]
       [:a.flex.py_6.c_light.fw_500.fs_14.lh_1d6 {:class (if (= route "commercial-clearing") " mob_nav_active" "") :href "/commercial-clearing"} "Gewerbliche Räumung"]
-      [:a.flex.py_6.c_light.fw_500.fs_14.lh_1d6 {:class (if (= route "price") " mob_nav_active" "") :href "/price"} "Preisanfrage"]
+      [:a.flex.py_6.c_light.fw_500.fs_14.lh_1d6 {:class (if (= route "price") " mob_nav_active" "") :href "/pricing"} "Preisanfrage"]
       [:a.flex.py_6.c_light.fw_500.fs_14.lh_1d6 {:class (if (= route "privacy-policy") " mob_nav_active" "") :href "/privacy-policy"} "Datenschutzerklärung"]]]]])
 
 (defn- footer []
