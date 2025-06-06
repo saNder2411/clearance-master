@@ -52,7 +52,7 @@
    [:div.footer_links.mb_80
     [:div.mb_32
      [:h2.mb_24 "Vorteile"]
-     (item-list {:items [(icon-text-row {:img-src "/img/shield-ban.svg" :text "100% versicherter Umzug"})
+     (item-list {:items [(icon-text-row {:img-src "/img/shield-ban.svg" :text "100% versicherter Räumung"})
                          (icon-text-row {:img-src "/img/file-text.svg" :text "100% kostenloses Angebot"})
                          (icon-text-row {:img-src "/img/package-open.svg" :text "Packservice"})
                          (icon-text-row {:img-src "/img/map.svg" :text "wir fahren in jede Region"})

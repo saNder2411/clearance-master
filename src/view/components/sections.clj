@@ -3,11 +3,11 @@
 (defn main-banner [{:keys [title p1 p2 btn-label img-src] :or {btn-label "Erfahren Sie mehr über uns" img-src "/img/pro-household.png"}}]
   [:div.container.main_banner
    [:div.main_banner_text
-    [:div.fade_in_up
+    [:div..mb_34.fade_in_up
      [:h1.h_mb.fw_900 title]
      [:p.p_mb p1]
      [:p p2]]
-    [:a.link-btn.button_d.c_dark.border_r_22.shadow_22.py_6.px_22.mt_34.mob_w_100.fade_in {:href "/#advantages"}
+    [:a.link-btn.button_d.c_dark.border_r_22.shadow_22.py_6.px_22.mob_w_100.fade_in {:href "/#advantages"}
      btn-label]]
 
    [:img.w_100.border_r_12.fade_in_2s {:src img-src}]])
