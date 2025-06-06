@@ -10,27 +10,35 @@
 (defn pricing-page [route]
   (layout route
           [:main
-           (main-banner {:title "Professionelle Haushaltsauflösungen"
-                         :p1    "Benötigen Sie eine komplette Räumung von Häusern, Wohnungen, Büros oder Lagerhallen? Wir sind für Sie da!"
-                         :p2    "Unser erfahrenes Team sorgt für eine zügige, gründliche und umweltgerechte Müllentsorgung – alles in\nkürzester Zeit und stets in enger Abstimmung mit Ihren Wünschen."})
-
-           [:div.container.py_0
-            (breadcrumbs route)]
-
-           [:div.max_w_1280.mx_a.my_40
-            (slideshow)]
+           (main-banner {:title "Preisübersicht für Räumungsarbeiten"
+                         :p1    "Individuelle Kostenentstehung: Umfang, Etage, Küchenausbau, Teppichböden, Laufwege usw."
+                         :p2    "Einen Kostenrechner bieten wir nicht an. Die sind eine nette Spielerei, zeigen aber unzuverlässige und oft zu niedrige Preise an. Für einen seriösen Festpreis ist eine Besichtigung hilfreich. Dann ist auch wirklich alles berücksichtigt."})
 
            [:div.bg_yellow
-            [:div.container
-             (card-img-left {:title "Leistungsumfang und Termine"
-                             :p1    "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."
-                             :p2    "Unsere Nachlassauflösung bietet Ihnen eine einfühlsame und professionelle Lösung. Wir kümmern uns um die Entsorgung von Erbstücken und hinterlassen Ihre Räume besenrein. Vertrauen Sie auf unsere Expertise für einen respektvollen und effizienten Abschluss."})]]
+            [:div.container.py_4
+             (breadcrumbs route)]]
 
-           [:div.bg_light_242
+           #_[:div.max_w_1280.mx_a.my_40
+              (slideshow)]
+
+
+           [:div.bg_light
             [:div.container
-             [:div.max_w_800.mx_a.text_align_c_not_mob.mb_60_res
-              [:h2.h_mb.fs_28.w_600 "Leistungsumfang von Räumungsmeister"]
-              [:p "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."]]
+             [:div.max_w_700.mx_a.mb_60_res
+              [:h2.fs_28.w_600.px_4.pb_20.border_b_1.border_gray_100
+               "Die Preise variieren je nach Zustand des Objekts:"]
+              [:dl
+               [:div.grid.grid_cols_3.gap_4.px_4.py_20.border_b_1.border_gray_100
+                [:dt.fw_500 "Normal bestückt"]
+                [:dd.col_span_2 "Geringe Menge an Möbeln und Gegenständen"]]
+               [:div.grid.grid_cols_3.gap_4.px_4.py_20.border_b_1.border_gray_100
+                [:dt.fw_500 "Stark bestückt"]
+                [:dd.col_span_2 "Hohe Menge an Möbeln, Inventar oder Unrat"]]
+               [:div.grid.grid_cols_3.gap_4.px_4.py_20.border_b_1.border_gray_100
+                [:dt.fw_500 "Extrem bestückt / Messie"]
+                [:dd.col_span_2 "Sehr starker Befall mit Unrat und Müll"]]]]
+
+
 
              (card {:id          (random-int-id "crd-0")
                     :card-class  "bg_light mb_84_res"
@@ -129,85 +137,18 @@
                      :bg-image    "/img/moving_12.jpg"})]]]
 
            [:div.bg_yellow
-              [:div.container
-               (appointment-header {:title     "Kontakt"
-                                    :sub-title "Wie lange brauchen wir?"
-                                    :p         "Mit dem Buchungssystem kannst du bequem und schnell verfügbare Zeitslots einsehen und deinen Termin direkt online buchen."})
-
-               [:div.cards_container.mb_84_res
-                (card-time {:title "30min" :sub-title "Jeder" :text "Kennlernen oder kurze Abstimmung"})
-                (card-time {:title "60min" :sub-title "Jeder" :text "Ausgedehntes Kennenlernen"})
-                (card-time {:title "2 Std." :sub-title "Kunden" :text "Eine kurze Arbeitssession"})
-                (card-time {:title "3+ Std." :sub-title "Kunden" :text "Eine längere Arbeitssession"})]
-
-               [:div.max_w_768.mx_a.text_align_c_not_mob
-                [:p.c_light.lh_1d4 "Wenn Du die Terminbuchung nicht verwenden möchtest, kannst Du gerne den Kalender als Referenz für verfügbare Zeitslots nutzen und uns deine Einladung stattdessen an "
-                 [:span.fw_700 "termin@räumungsmeister.de"]
-                 " senden."]]]]
-
-           [:div.bg_dark
             [:div.container
-             [:div.flex_2_col.align_c
-              [:div.flex_grow_1.mt_12.mb_26
-               (slogan-label)]
+             (appointment-header {:title     "Kontakt"
+                                  :sub-title "Wie lange brauchen wir?"
+                                  :p         "Mit dem Buchungssystem kannst du bequem und schnell verfügbare Zeitslots einsehen und deinen Termin direkt online buchen."})
 
-              [:div.pl_60.p_0_mob
-               [:h2.h_mb.fs_40.fw_900.c_dark "Was macht uns einzigartig"]
+             [:div.cards_container.mb_84_res
+              (card-time {:title "30min" :sub-title "Jeder" :text "Kennlernen oder kurze Abstimmung"})
+              (card-time {:title "60min" :sub-title "Jeder" :text "Ausgedehntes Kennenlernen"})
+              (card-time {:title "2 Std." :sub-title "Kunden" :text "Eine kurze Arbeitssession"})
+              (card-time {:title "3+ Std." :sub-title "Kunden" :text "Eine längere Arbeitssession"})]
 
-               (slogan-row {:n-row "01"
-                            :title "Schnelligkeit & Zuverlässigkeit."
-                            :desc  "Wir erledigen die Räumung zügig, ohne Qualität einzubüßen."})
-
-               (slogan-row {:n-row "02"
-                            :title "Transparente Preise."
-                            :desc  "Keine versteckten Kosten, faire Konditionen, klare Abrechnung."})
-
-               (slogan-row {:n-row "03"
-                            :title "Umweltbewusstsein."
-                            :desc  "Wir setzen auf nachhaltige Entsorgung, Recycling und umweltgerechte Verfahren."})
-
-               (slogan-row {:n-row "04"
-                            :title "Kundenorientierter Service."
-                            :desc  "Ihre Zufriedenheit steht bei uns an erster Stelle. Wir gehen auf Ihre Wünsche ein und sorgen für eine stressfreie Abwicklung."})
-
-               [:button.button_yellow.bg_yellow.c_light.mob_w_100.mt_24.mb_12.border_r_22.py_6.px_22 {:type "button"}
-                "Erstgespräch anfragen"]]]]]
-
-           [:div.bg_yellow
-            [:div.container
-             [:h2.fs_28.w_600.mb_60_res "Bei uns sind folgende Modelle möglich"]
-
-             [:div.grid_2_col.gap_32.mb_60_res
-              (card-text {:title      "Festpreis Projekte"
-                          :text       "Dieses Modell bietet Dienstleistungen in Entwicklung, Automatisierung und Kl-Optimierung zu einem festgelegten Preis. Es ist ideal für Projekte mit klaren Zielen, wie MVP-Entwicklung oder spezifische Automatisierungsaufgaben, und bietet Budgetsicherheit durch eine vorab definierte Kostenstruktur sowie Laufzeit."
-                          :image-path "/img/target.svg"})
-
-              (card-text {:title      "Team as a Service"
-                          :text       "Hierbei wird ein spezialisiertes Team bereitgestellt, das eng mit dem Kunden für kontinuierliche Entwicklung, Automatisierung und Integration zusammenarbeitet. Dieses flexible Modell eignet sich für langfristige Projekte und ermöglicht es Kunden, von erweiterter technischer Expertise und laufenden innovativen Lösungen zu profitieren."
-                          :image-path "/img/clock.svg"})]
-
-             [:h2.fs_28.w_600.mb_60_res "Leistungsbausteine"]
-
-             (tag-list {:tags ["Anforderungsanalyse"
-                               "Projektmanagement"
-                               "Prototyping"
-                               "No-Code"
-                               "Low-Code"
-                               "Prozessorchestrierung"
-                               "Process-Mining"
-                               "End-2-End Prozessautomatisierung"
-                               "Robotic Process Automation (RPA)"
-                               "Business Process Model and Notation (BPMN)"
-                               "API-Entwicklung"
-                               "Mobile Apps"
-                               "Web-Anwendungen"
-                               "Frontend Entwicklung"
-                               "Backend Entwicklung"
-                               "Internet of Things"]})]]
-
-           [:div.bg_dark
-            [:div.container
-             (contact-form {:mod        :dark
-                            :title      "Bereit für was Neues - ähm nen Newsletter?"
-                            :desc       "Unser Newsletter. Kein Spam, nur hin und wieder Updates zur Welt von No-Code, Workflows und Digitalisierung!"
-                            :convention "Ich habe die Datenschutzerklärung zur Kenntnis genommen."})]]]))
+             [:div.max_w_768.mx_a.text_align_c_not_mob
+              [:p.c_light.lh_1d4 "Wenn Du die Terminbuchung nicht verwenden möchtest, kannst Du gerne den Kalender als Referenz für verfügbare Zeitslots nutzen und uns deine Einladung stattdessen an "
+               [:span.fw_700 "termin@räumungsmeister.de"]
+               " senden."]]]]]))

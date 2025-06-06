@@ -1,5 +1,6 @@
 (ns view.pages.privacy-policy
-  (:require [view.components.layout :refer [layout]]))
+  (:require [view.components.layout :refer [layout]]
+            [view.components.sections :refer [breadcrumbs]]))
 
 (defn privacy-policy-page [route]
   (layout route
@@ -8,6 +9,10 @@
             [:h1.h_mb.fw_900 "Datenschutzerklärung"]
             [:p.mb_10.fw_900 "Räumungsmeister"]
             [:p "Inhaber: Johann Romanenko"]]
+
+           [:div.bg_yellow
+            [:div.container.py_4
+             (breadcrumbs route)]]
 
            [:div.bg_light_242
             [:div.container

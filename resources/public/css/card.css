@@ -96,9 +96,12 @@
     .card {flex-direction:column}
     .card_left {
         width: 100%;
-        min-height:280px;
+        min-height:180px;
         border-bottom-left-radius: 0;
         border-top-right-radius: 12px;
+    }
+    .card.vertical .card_left {
+        min-height:180px;
     }
     .card_right {
         width: 100%;

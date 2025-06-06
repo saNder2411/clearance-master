@@ -46,8 +46,26 @@
 .gap_24 {gap: 1.5rem}
 .gap_28 {gap: 1.75rem}
 .gap_32 {gap: 2rem}
-
 .gap_x_84_res {gap: 0 5.25rem}
+
+.gap_4 {gap: calc(.25rem * 4)}
+
+.grid_cols_2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid_cols_3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid_cols_4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.col_span_2 {
+    grid-column: span 2 / span 2;
+}
+
 @media (max-width:1139px) {
     .gap_x_84_res {gap:0 3rem}
 }

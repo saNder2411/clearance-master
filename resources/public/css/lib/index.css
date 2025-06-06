@@ -1,4 +1,5 @@
 @import "/css/lib/root.css";
+@import "/css/lib/form.css";
 @import "/css/lib/padding.css";
 @import "/css/lib/margin.css";
 @import "/css/lib/size.css";
@@ -7,4 +8,3 @@
 @import "/css/lib/position.css";
 @import "/css/lib/display.css";
 @import "/css/lib/decoration.css";
-@import "/css/lib/form.css";

@@ -6,6 +6,7 @@
 .border_light {border-color: var(--color-light)}
 .border_dark {border-color: var(--color-dark)}
 .border_yellow {border-color: var(--yellow)}
+.border_gray_100 {border-color: var(--color-gray-100)}
 
 .border_r_4 {border-radius: 4px}
 .border_r_5 {border-radius: 5px}

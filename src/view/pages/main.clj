@@ -128,7 +128,7 @@
                      :bg-image    "/img/free-offer.png"})]]]
 
 
-           [:div.bg_dark
+           [:div#advantages.bg_dark
             [:div.container
              [:div.flex_2_col.align_c
               [:div.flex_grow_1.mt_12.mb_26

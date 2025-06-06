@@ -7,7 +7,7 @@
   [:div.sticky.top_0.z_50.bg_d_blur
    [:div.container.flex.align_c.justify_e.c_dark.py_4.fs_14_mob
     [:img {:alt "email" :width 16 :src "/img/mail_l.svg"}]
-    [:span.mr_14.ml_6 "info@raemungsmeister.de"]
+    [:a.mr_14.ml_6.c_dark {:href "mailto:info@raemungsmeister.de"} "info@raemungsmeister.de"]
     [:img {:alt "phone" :width 16 :src "/img/phone_l.svg"}]
     [:span.ml_6 "+49 155 61383039"]]])
 
@@ -18,16 +18,16 @@
      [:img {:alt "logo" :width 30 :height 30 :src "/logo/min_logo.svg"}]]
 
     [:nav.desc_nav
-     [:a.nav_i.fw_600 {:class (if (= route "house-clearing") " nav_i_active" "") :href "/house-clearing"}
+     [:a.nav_i.fw_600 {:class (if (= route "/house-clearing") " nav_i_active" "") :href "/house-clearing"}
       "Privat Hausauflösung"]
 
-     [:a.nav_i.fw_600.ml_32 {:class (if (= route "commercial-clearing") " nav_i_active" "") :href "/commercial-clearing"}
+     [:a.nav_i.fw_600.ml_32 {:class (if (= route "/commercial-clearing") " nav_i_active" "") :href "/commercial-clearing"}
       "Gewerbliche Räumung"]
 
-     [:a.nav_i.fw_600.ml_32 {:class (if (= route "pricing") " nav_i_active" "") :href "/pricing"}
+     [:a.nav_i.fw_600.ml_32 {:class (if (= route "/pricing") " nav_i_active" "") :href "/pricing"}
       "Preisanfrage"]
 
-     [:a.nav_i.fw_600.ml_32 {:class (if (= route "privacy-policy") " nav_i_active" "") :href "/privacy-policy"}
+     [:a.nav_i.fw_600.ml_32 {:class (if (= route "/privacy-policy") " nav_i_active" "") :href "/privacy-policy"}
       "Datenschutzerklärung"]]
 
     [:input#mob_nav_switch {:type "checkbox"}]
@@ -50,7 +50,13 @@
      [:img {:alt "logo" :width 360 :src "/logo/main_logo_1.svg"}]]]
 
    [:div.footer_links.mb_80
-    [:div.mb_32]
+    [:div.mb_32
+     [:h2.mb_24 "Vorteile"]
+     (item-list {:items [(icon-text-row {:img-src "/img/shield-ban.svg" :text "100% versicherter Umzug"})
+                         (icon-text-row {:img-src "/img/file-text.svg" :text "100% kostenloses Angebot"})
+                         (icon-text-row {:img-src "/img/package-open.svg" :text "Packservice"})
+                         (icon-text-row {:img-src "/img/map.svg" :text "wir fahren in jede Region"})
+                         (icon-text-row {:img-src "/img/calendar-check.svg" :text "schnelle Termine"})]})]
 
     [:div.mb_32
      [:h2.mb_24 "Services"]
@@ -66,7 +72,7 @@
     [:div.mb_32
      [:h2.mb_24 "Kontakt"]
 
-     (item-list {:items [(icon-text-row {:img-src "/img/mail.svg" :text "info@raemungsmeister.de"})
+     (item-list {:items [(icon-text-row {:img-src "/img/mail.svg" :text [:a {:href "mailto:info@raemungsmeister.de"} "info@raemungsmeister.de"]})
                          (icon-text-row {:img-src "/img/phone.svg" :text "+49 155 61383039"})
                          (icon-text-row {:img-src "/img/map-pin-house.svg" :text "Nefflenallee 21, 74523 Schwäbisch Hall"})
                          (icon-text-row {:img-src "/img/graduation-cap.svg" :text "DE326222601"})]})]]

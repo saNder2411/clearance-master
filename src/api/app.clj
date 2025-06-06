@@ -17,25 +17,24 @@
 (defn root-head [_req]
   {:status 200 :headers {"Content-Type" "text/plain"} :body "The App is available"})
 
-(defn root [_req]
-  (-> (main-page "/")
+(defn root [{:keys [uri]}]
+  (-> (main-page uri)
       ok))
 
-(defn house-clearing [_req]
-  (println _req)
-  (-> (house-clearing-page "house-clearing")
+(defn house-clearing [{:keys [uri]}]
+  (-> (house-clearing-page uri)
       ok))
 
-(defn commercial-clearing [_req]
-  (-> (commercial-clearing-page "commercial-clearing")
+(defn commercial-clearing [{:keys [uri]}]
+  (-> (commercial-clearing-page uri)
       ok))
 
-(defn pricing [_req]
-  (-> (pricing-page "pricing")
+(defn pricing [{:keys [uri]}]
+  (-> (pricing-page uri)
       ok))
 
-(defn privacy-policy [_req]
-  (-> (privacy-policy-page "privacy-policy")
+(defn privacy-policy [{:keys [uri]}]
+  (-> (privacy-policy-page uri)
       ok))
 
 (def contacts (i/interceptor {:name  ::contacts
