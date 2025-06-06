@@ -134,7 +134,7 @@
                                   :sub-title "Wie lange brauchen wir?"
                                   :p         "Mit dem Buchungssystem kannst du bequem und schnell verfügbare Zeitslots einsehen und deinen Termin direkt online buchen."})
 
-             [:div.cards_container.mb_84_res
+             [:div.cards_container_4x250.mb_84_res
               (card-time {:title "30min" :sub-title "Jeder" :text "Kennlernen oder kurze Abstimmung"})
               (card-time {:title "60min" :sub-title "Jeder" :text "Ausgedehntes Kennenlernen"})
               (card-time {:title "2 Std." :sub-title "Kunden" :text "Eine kurze Arbeitssession"})

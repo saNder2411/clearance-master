@@ -124,7 +124,13 @@
 .max_w_1024 {max-width:1024px}
 .max_w_1280 {max-width: 80rem}
 .max_w_1536 {max-width:1536px}
+
+.min_w_370 {min-width:370px}
+.min_w_390 {min-width:390px}
+.min_w_400 {min-width:400px}
+
 .min_h_20 {min-height:1.25rem}
+
 
 @media (max-width:767px) {
     .mob_w_100 {width: 100%}

@@ -41,3 +41,13 @@
     [:h3.mb_24.fs_26.fw_600 title]
     [:p.fs_14 text]]
    [:div.show_modal_btn]])
+
+(defn card-price [{:keys [title entries]}]
+  [:div.card_shadow.border_r_12.p_32.bg_light
+   [:h3.mb_24.fs_24.fw_600 title]
+
+   [:dl
+    (map-indexed (fn [idx [k v]]
+           [:div.flex.flex_wrap.align_c.justify_sb.px_4.py_20 {:class (if (= idx (dec (count entries))) "" "border_b_1 border_gray_100")}
+            [:dt k]
+            [:dd.fw_600 v]]) entries)]])

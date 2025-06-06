@@ -1,154 +1,71 @@
 (ns view.pages.pricing
   (:require [view.components.layout :refer [layout]]
-            [view.components.sections :refer [main-banner breadcrumbs slogan-label slogan-row appointment-header]]
+            [view.components.sections :refer [main-banner breadcrumbs]]
             [view.components.slideshow :refer [slideshow]]
-            [view.components.form :refer [contact-form]]
-            [view.components.cards :refer [card card-time card-text card-img-left]]
-            [view.components.lists :refer [tag-list]]
-            [api.lib.core :refer [random-int-id]]))
+            [view.components.cards :refer [card-price]]))
 
 (defn pricing-page [route]
   (layout route
           [:main
-           (main-banner {:title "Preisübersicht für Räumungsarbeiten"
-                         :p1    "Individuelle Kostenentstehung: Umfang, Etage, Küchenausbau, Teppichböden, Laufwege usw."
-                         :p2    "Einen Kostenrechner bieten wir nicht an. Die sind eine nette Spielerei, zeigen aber unzuverlässige und oft zu niedrige Preise an. Für einen seriösen Festpreis ist eine Besichtigung hilfreich. Dann ist auch wirklich alles berücksichtigt."})
+           (main-banner {:title   "Preisübersicht für Räumungsarbeiten"
+                         :p1      "Individuelle Kostenentstehung: Umfang, Etage, Küchenausbau, Teppichböden, Laufwege usw."
+                         :p2      "Einen Kostenrechner bieten wir nicht an. Die sind eine nette Spielerei, zeigen aber unzuverlässige und oft zu niedrige Preise an. Für einen seriösen Festpreis ist eine Besichtigung hilfreich. Dann ist auch wirklich alles berücksichtigt."
+                         :img-src "/img/pricing_c.png"})
 
            [:div.bg_yellow
             [:div.container.py_4
              (breadcrumbs route)]]
 
-           #_[:div.max_w_1280.mx_a.my_40
-              (slideshow)]
-
-
-           [:div.bg_light
+           [:div.bg_light_242
             [:div.container
              [:div.max_w_700.mx_a.mb_60_res
-              [:h2.fs_28.w_600.px_4.pb_20.border_b_1.border_gray_100
+              [:h2.fs_28.w_600.px_4.pb_20
                "Die Preise variieren je nach Zustand des Objekts:"]
               [:dl
-               [:div.grid.grid_cols_3.gap_4.px_4.py_20.border_b_1.border_gray_100
-                [:dt.fw_500 "Normal bestückt"]
+               [:div.grid.grid_cols_3.gap_4.px_4.py_10
+                [:dt.fw_600 "Normal bestückt"]
                 [:dd.col_span_2 "Geringe Menge an Möbeln und Gegenständen"]]
-               [:div.grid.grid_cols_3.gap_4.px_4.py_20.border_b_1.border_gray_100
-                [:dt.fw_500 "Stark bestückt"]
+               [:div.grid.grid_cols_3.gap_4.px_4.py_10
+                [:dt.fw_600 "Stark bestückt"]
                 [:dd.col_span_2 "Hohe Menge an Möbeln, Inventar oder Unrat"]]
-               [:div.grid.grid_cols_3.gap_4.px_4.py_20.border_b_1.border_gray_100
-                [:dt.fw_500 "Extrem bestückt / Messie"]
+               [:div.grid.grid_cols_3.gap_4.px_4.py_10
+                [:dt.fw_600 "Extrem bestückt / Messie"]
                 [:dd.col_span_2 "Sehr starker Befall mit Unrat und Müll"]]]]
 
 
 
-             (card {:id          (random-int-id "crd-0")
-                    :card-class  "bg_light mb_84_res"
-                    :right-class "bg_light_245 fs_24 fst_it"
-                    :title       "Entrümpelung"
-                    :left-text   ""
-                    :right-text  "Fachgerechte Entrümpelung von Wohnungen, Häusern, Kellern, Dachböden, Garagen und anderen Räumen Inklusive Grobreinigung nach der Räumung."
-                    :bg-image    "/img/moving_1.jpg"})
+             [:div.cards_container_2.mb_84_res
+              (card-price {:title   "Wohnung (50 m²)"
+                           :entries [["Normal bestückt" "ab 750,00 €"]
+                                     ["Stark bestückt" "ab 1.250,00 €"]
+                                     ["Extrem bestückt" "ab 2.500,00 €"]]})
 
-             (card {:id          (random-int-id "crd-0")
-                    :card-class  "bg_light mb_84_res"
-                    :right-class "bg_light_245 fs_24 fst_it"
-                    :title       "Haushaltsauflösung"
-                    :left-text   ""
-                    :right-text  "Komplette Auflösung von Haushalten, inklusive Möbelabbau und Entsorgung\n\nInklusive Grobreinigung nach der Auflösung."
-                    :bg-image    "/img/moving_0.jpeg"})
+              (card-price {:title   "Haus (100 m²)"
+                           :entries [["Normal bestückt" "ab 1.500,00 €"]
+                                     ["Stark bestückt" "ab 2.400,00 €"]
+                                     ["Extrem bestückt" "ab 4.900,00 €"]]})
 
-             (card {:id          (random-int-id "crd-0")
-                    :card-class  "bg_light mb_84_res"
-                    :right-class "bg_light_245 fs_24 fst_it"
-                    :title       "Räumung von Gewerbeobjekten"
-                    :left-text   ""
-                    :right-text  "Räumung von Büros, Lagerhallen, Geschäftsräumen und anderen Gewerbeflächen Inklusive Grobreinigung nach der Räumung"
-                    :bg-image    "/img/moving_2.jpg"})
+              (card-price {:title   "Keller (16 m²)"
+                           :entries [["Normal bestückt" "ab 240,00 €"]
+                                     ["Stark bestückt" "ab 480,00 €"]
+                                     ["Extrem bestückt" "ab 770,00 €"]]})
 
-             (card {:id          (random-int-id "crd-0")
-                    :card-class  "bg_light mb_84_res"
-                    :right-class "bg_light_245 fs_24 fst_it"
-                    :title       "Grundreinigung"
-                    :left-text   ""
-                    :right-text  "Gründliche Reinigung von Wohnungen, Häusern und Gewerbeobjekten nach Räumung"
-                    :bg-image    "/img/moving_2.jpg"})
+              (card-price {:title   "Garage (16 m²)"
+                           :entries [["Normal bestückt" "ab 240,00 €"]
+                                     ["Stark bestückt" "ab 480,00 €"]
+                                     ["Extrem bestückt" " ab 770,00 €"]]})
 
-             [:div.max_w_800.mx_a.text_align_c_not_mob
-              [:p.p_mb "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."]
+              (card-price {:title   "Dachboden (26 m²)"
+                           :entries [["Normal bestückt" "ab 390,00 €"]
+                                     ["Stark bestückt" "ab 780,00 €"]
+                                     ["Extrem bestückt" "ab 1.250,00 €"]]})
 
-              [:button.button_d.mob_w_100.my_16.c_dark.border_r_22.shadow_22.py_6.px_22 {:type "button"}
-               "Jetzt starten"]]]]
+              (card-price {:title   "Küche (18 m²)"
+                           :entries [["Normal bestückt" "ab 450,00 €"]
+                                     ["Stark bestückt" "ab 595,00 €"]
+                                     ["Extrem bestückt" "ab 990,00 €"]]})
 
-           [:div.bg_light
-            [:div.container
-             [:div.max_w_800.mb_60_res.mx_a.text_align_c_not_mob
-              [:h2.h_mb.fs_28.fw_600 "Ihr zuverlässiger Partner für schnelle, professionelle und individuelle Haushaltsauflösungen!"]
-              [:p.p_mb "Benötigen Sie eine komplette Räumung von Häusern, Wohnungen, Büros oder Lagerhallen? Wir sind für Sie da! Unser erfahrenes Team sorgt für eine zügige, gründliche und umweltgerechte Müllentsorgung – alles in kürzester Zeit und stets in enger Abstimmung mit Ihren Wünschen."]
-              [:h2.h_mb.fs_22.fw_600 "Was wir für Sie tun"]]
-
-             [:div.grid_2_col.gap_x_84_res
-              (card {:id          (random-int-id "crd-1")
-                     :card-class  "vertical bg_yellow mb_84_res"
-                     :title       "Komplette Haushaltsauflösungen"
-                     :left-text   ""
-                     :right-class "bg_light fs_22 fst_it"
-                     :right-text  "Wir übernehmen alles, von der Planung bis zur finalen Räumung, damit Sie sich um nichts kümmern müssen."
-                     :bg-image    "/img/moving_3.jpeg"})
-
-              (card {:id          (random-int-id "crd-1")
-                     :card-class  "vertical bg_yellow mb_84_res"
-                     :title       "Effiziente Büro und Lagerhallenräumung"
-                     :left-text   ""
-                     :right-class "bg_light fs_22 fst_it"
-                     :right-text  "Schnell, sauber und zuverlässig, damit Ihr Geschäft schnell wieder läuft."
-                     :bg-image    "/img/moving_4.jpg"})]
-
-             [:div.grid_2_col.gap_x_84_res
-              (card {:id          (random-int-id "crd-1")
-                     :card-class  "vertical bg_yellow mb_84_res"
-                     :title       "Flexible Termine"
-                     :left-text   ""
-                     :right-class "bg_light fs_22 fst_it"
-                     :right-text  "Wir richten uns nach Ihrem Zeitplan, um die Räumung so bequem wie möglich für Sie zu gestalten."
-                     :bg-image    "/img/moving_7.webp"})
-
-              (card {:id          (random-int-id "crd-1")
-                     :card-class  "vertical bg_yellow mb_84_res"
-                     :title       "Vollständige Müll und Sperrmüllentsorgung"
-                     :left-text   ""
-                     :right-class "bg_light fs_22 fst_it"
-                     :right-text  "Umweltgerecht, fachgerecht und nach den gesetzlichen Vorgaben, inklusive Recycling."
-                     :bg-image    "/img/moving_12.jpg"})]
-
-             [:div.grid_2_col.gap_x_84_res
-              (card {:id          (random-int-id "crd-1")
-                     :card-class  "vertical bg_yellow mb_84_res"
-                     :title       "Diskrete und respektvolle Durchführung"
-                     :left-text   ""
-                     :right-class "bg_light fs_22 fst_it"
-                     :right-text  "Wir behandeln Ihr Eigentum mit Sorgfalt und Respekt, auch bei sensiblen Objekten."
-                     :bg-image    "/img/moving_7.webp"})
-
-              (card {:id          (random-int-id "crd-1")
-                     :card-class  "vertical bg_yellow mb_84_res"
-                     :title       "Individuelle Beratung & kostenloses Angebot"
-                     :left-text   ""
-                     :right-class "bg_light fs_22 fst_it"
-                     :right-text  "Wir finden die beste Lösung für Ihre Bedürfnisse und erstellen Ihnen ein unverbindliches Angebot."
-                     :bg-image    "/img/moving_12.jpg"})]]]
-
-           [:div.bg_yellow
-            [:div.container
-             (appointment-header {:title     "Kontakt"
-                                  :sub-title "Wie lange brauchen wir?"
-                                  :p         "Mit dem Buchungssystem kannst du bequem und schnell verfügbare Zeitslots einsehen und deinen Termin direkt online buchen."})
-
-             [:div.cards_container.mb_84_res
-              (card-time {:title "30min" :sub-title "Jeder" :text "Kennlernen oder kurze Abstimmung"})
-              (card-time {:title "60min" :sub-title "Jeder" :text "Ausgedehntes Kennenlernen"})
-              (card-time {:title "2 Std." :sub-title "Kunden" :text "Eine kurze Arbeitssession"})
-              (card-time {:title "3+ Std." :sub-title "Kunden" :text "Eine längere Arbeitssession"})]
-
-             [:div.max_w_768.mx_a.text_align_c_not_mob
-              [:p.c_light.lh_1d4 "Wenn Du die Terminbuchung nicht verwenden möchtest, kannst Du gerne den Kalender als Referenz für verfügbare Zeitslots nutzen und uns deine Einladung stattdessen an "
-               [:span.fw_700 "termin@räumungsmeister.de"]
-               " senden."]]]]]))
+              (card-price {:title   "Gartenschuppen (18 m²)"
+                           :entries [["Normal bestückt" "ab 270,00 €"]
+                                     ["Stark bestückt" "ab 540,00 €"]
+                                     ["Extrem bestückt" "ab 865,00 €"]]})]]]]))
