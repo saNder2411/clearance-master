@@ -3,7 +3,7 @@
 (defn gen-mover-items [path]
   (map (fn [index]
          [:div.mover_item
-          [:img {:src (str path index ".png")}]]) (range 0 6)))
+          [:img {:decoding "async" :src (str path index ".png")}]]) (range 0 6)))
 
 (defn gen-mover [class items]
   (into [:div {:class class}] (concat items items)))

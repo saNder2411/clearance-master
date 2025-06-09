@@ -64,10 +64,7 @@
                     :bg-image    "/img/general-cleaning.png"})
 
              [:div.max_w_800.mx_a.text_align_c_not_mob
-              [:p.p_mb "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."]
-
-              [:button.button_d.mob_w_100.my_16.c_dark.border_r_22.shadow_22.py_6.px_22 {:type "button"}
-               "Jetzt starten"]]]]
+              [:p.p_mb "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."]]]]
 
            [:div.bg_yellow
             [:div.container

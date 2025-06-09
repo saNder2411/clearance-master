@@ -2,6 +2,7 @@
 .border_2 {border-width: 2px; border-style: solid;}
 .border_b_1 {border-bottom: 1px solid #000;}
 
+.shadow_img {box-shadow: 0 0 #0000, 0 0 #0000,0 0 #0000, 0 0 #0000, 0 25px 50px -12px #00000040}
 
 .border_light {border-color: var(--color-light)}
 .border_dark {border-color: var(--color-dark)}
@@ -35,3 +36,7 @@
 
 .shadow_22 {box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px}
 .card_shadow {box-shadow: rgba(100, 100, 111, 0.25) 0px 7px 29px 0px;}
+.border_light_shadow {box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, inset 0 0 0 1px oklab(100% 0 5.96046e-8/.1), 0 0 #0000;}
+
+.obj_fit_c {object-fit: cover}
+.isolation_iso {isolation: isolate}

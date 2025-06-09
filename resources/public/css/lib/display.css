@@ -6,11 +6,10 @@
 
 .flex {display: flex}
 .inline_flex {display: inline-flex}
-
 .flex_wrap {flex-wrap: wrap}
-
 .direction_col {flex-direction: column}
-
+.direction_row_rev {flex-direction: row-reverse;}
+.flex_a {flex: auto}
 .justify_c {justify-content: center}
 .justify_s {justify-content: flex-start}
 .justify_e {justify-content: flex-end}
@@ -21,15 +20,19 @@
 .align_c {align-items: center}
 .align_s {align-items: flex-start}
 .align_e {align-items: flex-end}
-.align-b {align-items: baseline}
-.align_stch {align-items: stretch}
+.align_b {align-items: baseline}
+.align_stretch {align-items: stretch}
 .align_slf_c {align-self: center}
 .align_slf_s {align-self: flex-start}
 .align_slf_e {align-self: flex-end}
 .flex_shrink_0 {flex-shrink: 0}
 .flex_shrink_1 {flex-shrink: 1}
+.flex_shrink_1 {flex-shrink: 1}
 .flex_grow_0 {flex-grow: 0}
 .flex_grow_1 {flex-grow: 1}
+
+.row_gap_32 {row-gap: 2rem}
+.col_gap_32 {column-gap: 2rem}
 
 .grid {display: grid}
 .inline_grid {display: inline-grid}

@@ -1,8 +1,8 @@
 (ns view.pages.pricing
   (:require [view.components.layout :refer [layout]]
             [view.components.sections :refer [main-banner breadcrumbs]]
-            [view.components.slideshow :refer [slideshow]]
-            [view.components.cards :refer [card-price]]))
+            [view.components.cards :refer [card-price]]
+            [view.components.form :refer [contact-form]]))
 
 (defn pricing-page [route]
   (layout route
@@ -68,4 +68,11 @@
               (card-price {:title   "Gartenschuppen (18 m²)"
                            :entries [["Normal bestückt" "ab 270,00 €"]
                                      ["Stark bestückt" "ab 540,00 €"]
-                                     ["Extrem bestückt" "ab 865,00 €"]]})]]]]))
+                                     ["Extrem bestückt" "ab 865,00 €"]]})]]]
+
+           [:div.bg_yellow
+            [:div.container
+             (contact-form {:mod        :light
+                            :title      "Kontaktieren Sie uns noch heute!"
+                            :desc       "Wir freuen uns darauf, Ihnen zu helfen und Ihre Räume wieder frei zu machen!"
+                            :convention "Ich habe die Datenschutzerklärung zur Kenntnis genommen."})]]]))

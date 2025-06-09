@@ -30,7 +30,7 @@
 
 (defn card-text [{:keys [title text image-path]}]
   [:div.flex.direction_col.bg_light.border_r_12.p_42_res
-   [:img.ml_a {:width 100 :src image-path}]
+   [:img.ml_a {:decoding "async" :width 100 :src image-path}]
    [:h2.h_mb.fs_28.fw_600 title]
    [:p text]])
 
@@ -43,11 +43,16 @@
    [:div.show_modal_btn]])
 
 (defn card-price [{:keys [title entries]}]
-  [:div.card_shadow.border_r_12.p_32.bg_light
-   [:h3.mb_24.fs_24.fw_600 title]
+  (let [[l-k l-v] (last entries)
+        bordered (mapv (fn [[k v]]
+                         [:div.flex.flex_wrap.align_c.justify_sb.px_4.py_20.border_b_1.border_gray_100
+                          [:dt k]
+                          [:dd.fw_600 v]]) (butlast entries))
+        items (apply list (conj bordered [:div.flex.flex_wrap.align_c.justify_sb.px_4.py_20
+                                          [:dt l-k]
+                                          [:dd.fw_600 l-v]]))]
+    [:div.card_shadow.border_r_12.p_32.bg_light
+     [:h3.mb_24.fs_24.fw_600 title]
 
-   [:dl
-    (map-indexed (fn [idx [k v]]
-           [:div.flex.flex_wrap.align_c.justify_sb.px_4.py_20 {:class (if (= idx (dec (count entries))) "" "border_b_1 border_gray_100")}
-            [:dt k]
-            [:dd.fw_600 v]]) entries)]])
+     [:dl
+      items]]))

@@ -1,5 +1,6 @@
 .bg_trans {background: transparent}
 .bg_light {background: var(--light)}
+.bg_light_a05 {background: var(--light-a05)}
 .bg_light_242 {background: var(--light-242)}
 .bg_light_245 {background: var(--light-245)}
 .bg_yellow {background: var(--yellow)}

@@ -6,16 +6,16 @@
 (defn- contact-tab []
   [:div.sticky.top_0.z_50.bg_d_blur
    [:div.container.flex.align_c.justify_e.c_dark.py_4.fs_14_mob
-    [:img {:alt "email" :width 16 :src "/img/mail_l.svg"}]
+    [:img {:decoding "async" :alt "email" :width 16 :src "/svg/mail_l.svg"}]
     [:a.mr_14.ml_6.c_dark {:href "mailto:info@raemungsmeister.de"} "info@raemungsmeister.de"]
-    [:img {:alt "phone" :width 16 :src "/img/phone_l.svg"}]
+    [:img {:decoding "async" :alt "phone" :width 16 :src "/svg/phone_l.svg"}]
     [:span.ml_6 "+49 155 61383039"]]])
 
 (defn- header [route]
   [:header.sticky.top_24p5.z_50.bg_blur
    [:div.container.flex.align_c.justify_sb.pt_20.pb_20.relative
     [:a {:href "/"}
-     [:img {:alt "logo" :width 30 :height 30 :src "/logo/min_logo.svg"}]]
+     [:img {:decoding "async" :alt "logo" :width 30 :height 30 :src "/logo/min_logo.svg"}]]
 
     [:nav.desc_nav
      [:a.nav_i.fw_600 {:class (if (= route "/house-clearing") " nav_i_active" "") :href "/house-clearing"}
@@ -47,16 +47,16 @@
   [:footer.container
    [:h2.mt_20.mb_60
     [:a {:href "/"}
-     [:img {:alt "logo" :width 360 :src "/logo/main_logo_1.svg"}]]]
+     [:img {:decoding "async" :alt "logo" :width 360 :src "/logo/main_logo_1.svg"}]]]
 
    [:div.footer_links.mb_80
     [:div.mb_32
      [:h2.mb_24 "Vorteile"]
-     (item-list {:items [(icon-text-row {:img-src "/img/shield-ban.svg" :text "100% versicherter Räumung"})
-                         (icon-text-row {:img-src "/img/file-text.svg" :text "100% kostenloses Angebot"})
-                         (icon-text-row {:img-src "/img/package-open.svg" :text "Packservice"})
-                         (icon-text-row {:img-src "/img/map.svg" :text "wir fahren in jede Region"})
-                         (icon-text-row {:img-src "/img/calendar-check.svg" :text "schnelle Termine"})]})]
+     (item-list {:items [(icon-text-row {:img-src "/svg/shield-ban.svg" :text "100% versicherter Räumung"})
+                         (icon-text-row {:img-src "/svg/file-text.svg" :text "100% kostenloses Angebot"})
+                         (icon-text-row {:img-src "/svg/package-open.svg" :text "Packservice"})
+                         (icon-text-row {:img-src "/svg/map.svg" :text "wir fahren in jede Region"})
+                         (icon-text-row {:img-src "/svg/calendar-check.svg" :text "schnelle Termine"})]})]
 
     [:div.mb_32
      [:h2.mb_24 "Services"]
@@ -66,16 +66,16 @@
     [:div.mb_32
      [:h2.mb_24 "Öffnungszeiten"]
 
-     (item-list {:items [(icon-text-row {:img-src "/img/calendar.svg" :text "Montag - Freitag"})
-                         (icon-text-row {:img-src "/img/clock-9.svg" :text "08.00 - 16.00 Uhr"})]})]
+     (item-list {:items [(icon-text-row {:img-src "/svg/calendar.svg" :text "Montag - Freitag"})
+                         (icon-text-row {:img-src "/svg/clock-9.svg" :text "08.00 - 16.00 Uhr"})]})]
 
     [:div.mb_32
      [:h2.mb_24 "Kontakt"]
 
-     (item-list {:items [(icon-text-row {:img-src "/img/mail.svg" :text [:a {:href "mailto:info@raemungsmeister.de"} "info@raemungsmeister.de"]})
-                         (icon-text-row {:img-src "/img/phone.svg" :text "+49 155 61383039"})
-                         (icon-text-row {:img-src "/img/map-pin-house.svg" :text "Nefflenallee 21, 74523 Schwäbisch Hall"})
-                         (icon-text-row {:img-src "/img/graduation-cap.svg" :text "DE326222601"})]})]]
+     (item-list {:items [(icon-text-row {:img-src "/svg/mail.svg" :text [:a {:href "mailto:info@raemungsmeister.de"} "info@raemungsmeister.de"]})
+                         (icon-text-row {:img-src "/svg/phone.svg" :text "+49 155 61383039"})
+                         (icon-text-row {:img-src "/svg/map-pin-house.svg" :text "Nefflenallee 21, 74523 Schwäbisch Hall"})
+                         (icon-text-row {:img-src "/svg/graduation-cap.svg" :text "DE326222601"})]})]]
 
    [:div.flex.flex_wrap.align_c.justify_sb
     [:span.c_social.mb_20.mr_32 "© 2016-2023 räumungsmeister"]
