@@ -15,7 +15,7 @@
   [:header.sticky.top_24p5.z_50.bg_blur
    [:div.container.flex.align_c.justify_sb.pt_20.pb_20.relative
     [:a {:href "/"}
-     [:img {:decoding "async" :alt "logo" :width 30 :height 30 :src "/logo/min_logo.svg"}]]
+     [:img {:decoding "async" :alt "logo" :width 30 :height 30 :src "/logo/main_logo_min.svg"}]]
 
     [:nav.desc_nav
      [:a.nav_i.fw_600 {:class (if (= route "/house-clearing") " nav_i_active" "") :href "/house-clearing"}
@@ -47,7 +47,7 @@
   [:footer.container
    [:h2.mt_20.mb_60
     [:a {:href "/"}
-     [:img {:decoding "async" :alt "logo" :width 360 :src "/logo/main_logo_1.svg"}]]]
+     [:img {:decoding "async" :alt "logo" :width 360 :src "/logo/main_logo.svg"}]]]
 
    [:div.footer_links.mb_80
     [:div.mb_32

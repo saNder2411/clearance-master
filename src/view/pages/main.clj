@@ -45,7 +45,7 @@
                     :title       "Haushaltsauflösung"
                     :left-text   ""
                     :right-text  "Komplette Auflösung von Haushalten, inklusive Möbelabbau und Entsorgung\n\nInklusive Grobreinigung nach der Auflösung."
-                    :bg-image    "/img/household-liquidation-de.png"})
+                    :bg-image    "/img/household-liquidation.png"})
 
              (card {:id          (random-int-id "crd-0")
                     :card-class  "bg_light mb_84_res"
@@ -105,7 +105,7 @@
                      :left-text   ""
                      :right-class "bg_light_245 fs_22 fst_it"
                      :right-text  "Umweltgerecht, fachgerecht und nach den gesetzlichen Vorgaben, inklusive Recycling."
-                     :bg-image    "/img/waste-disposal.png"})]
+                     :bg-image    "/img/wasted-disposal.png"})]
 
              [:div.grid_2_col.gap_x_84_res
               (card {:id          (random-int-id "crd-1")

@@ -10,7 +10,7 @@
            (main-banner {:title   "Preisübersicht für Räumungsarbeiten"
                          :p1      "Individuelle Kostenentstehung: Umfang, Etage, Küchenausbau, Teppichböden, Laufwege usw."
                          :p2      "Einen Kostenrechner bieten wir nicht an. Die sind eine nette Spielerei, zeigen aber unzuverlässige und oft zu niedrige Preise an. Für einen seriösen Festpreis ist eine Besichtigung hilfreich. Dann ist auch wirklich alles berücksichtigt."
-                         :img-src "/img/pricing_c.png"})
+                         :img-src "/img/pricing.png"})
 
            [:div.bg_yellow
             [:div.container.py_4

@@ -11,12 +11,12 @@
 (defn slideshow []
   [:div.slideshow
    (gen-mover "mover mover_a mb_28"
-              (gen-mover-items "/img/slider_a_"))
+              (gen-mover-items "/logo/slider_a_"))
 
    (gen-mover "mover mover_b mb_28"
-              (gen-mover-items "/img/slider_b_"))
+              (gen-mover-items "/logo/slider_b_"))
 
    (gen-mover "mover mover_c mb_28"
-              (gen-mover-items "/img/slider_c_"))
+              (gen-mover-items "/logo/slider_c_"))
 
    [:div.slideshow_mask]])

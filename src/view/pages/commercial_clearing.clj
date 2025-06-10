@@ -46,22 +46,22 @@
 
            [:div.bg_yellow
             [:div.container.py_0
-             (smooth-testimonials {:img-src "/img/commercial-clearance-12.png"
+             (smooth-testimonials {:img-src "/img/bg-commercial-cln-0.png"
                                    :p1      "Verlassen Sie sich auf unsere Erfahrung, Kompetenz und unsere Loyalität gegenüber Firmenkunden.
                                    Wir sorgen dafür, dass Ihre Räumung reibungslos, effizient und zu Ihrer vollsten Zufriedenheit verläuft – damit Sie sich auf Ihr Kerngeschäft konzentrieren können!"
                                    :p2      "Wir freuen uns darauf, Ihr Unternehmen bei der Räumung zu unterstützen."})
 
-             (smooth-testimonials {:img-src "/img/commercial-clearance-14.png"
+             (smooth-testimonials {:img-src "/img/bg-commercial-cln-1.png"
                                    :p1      "Unsere Einzigartigkeit, Ihre Zufriedenheit Bei uns stehen Sie als Kunde im Mittelpunkt.
                                    Was uns von anderen Anbietern unterscheidet, ist unsere einzigartige Kombination aus Zuverlässigkeit, persönlicher Betreuung und einem hohen Maß an Loyalität gegenüber unseren Kunden."
                                    :p2      "Wir legen großen Wert darauf, Ihre Wünsche und Bedürfnisse genau zu verstehen und individuell auf Sie einzugehen."})
 
-             (smooth-testimonials {:img-src "/img/commercial-clearance-16.png"
+             (smooth-testimonials {:img-src "/img/bg-commercial-cln-2.png"
                                    :p1      "Unsere langjährige Erfahrung und unser Engagement für Qualität machen uns zu einem vertrauenswürdigen Partner, auf den Sie sich jederzeit verlassen können.
                                    Wir sind stolz darauf, durch unsere sorgfältige und respektvolle Arbeitsweise eine hohe Kundenzufriedenheit zu gewährleisten."
                                    :p2      "Sie können sich darauf verlassen, dass Sie mit unserer Arbeit vollkommen zufrieden sein werden."})
 
-             (smooth-testimonials {:img-src "/img/commercial-clearance-13.png"
+             (smooth-testimonials {:img-src "/img/bg-commercial-cln-3.png"
                                    :p1      "Unser Ziel ist es, Ihre Räumung so stressfrei und professionell wie möglich zu gestalten – damit Sie sich auf das Wesentliche konzentrieren können."
                                    :p2      "Lassen Sie uns gemeinsam Ihre Räume wieder frei machen – mit Loyalität, Herz und höchster Qualität!"})]]
 
