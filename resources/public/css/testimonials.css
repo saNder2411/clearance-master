@@ -180,7 +180,7 @@
     position: absolute;
     inset: 0;
     mix-blend-mode: multiply;
-    background-color: oklab(0.24 0.01 0.03 / 0.9);
+    background-color: oklab(0.27 0.01 0.04 / 0.9);
 }
 .s_ts_bg_l_filter {
     position: absolute;
