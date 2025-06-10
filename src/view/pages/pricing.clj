@@ -7,7 +7,8 @@
 (defn pricing-page [route]
   (layout route
           [:main
-           (main-banner {:title   "Preisübersicht für Räumungsarbeiten"
+           (main-banner {:route route
+                         :title   "Preisübersicht für Räumungsarbeiten"
                          :p1      "Individuelle Kostenentstehung: Umfang, Etage, Küchenausbau, Teppichböden, Laufwege usw."
                          :p2      "Einen Kostenrechner bieten wir nicht an. Die sind eine nette Spielerei, zeigen aber unzuverlässige und oft zu niedrige Preise an. Für einen seriösen Festpreis ist eine Besichtigung hilfreich. Dann ist auch wirklich alles berücksichtigt."
                          :img-src "/img/pricing.png"})
@@ -70,7 +71,7 @@
                                      ["Stark bestückt" "ab 540,00 €"]
                                      ["Extrem bestückt" "ab 865,00 €"]]})]]]
 
-           [:div.bg_yellow
+           [:div#contact-form.bg_yellow
             [:div.container
              (contact-form {:mod        :light
                             :title      "Kontaktieren Sie uns noch heute!"

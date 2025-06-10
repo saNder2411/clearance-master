@@ -1,6 +1,6 @@
 (ns view.pages.main
   (:require [view.components.layout :refer [layout]]
-            [view.components.sections :refer [main-banner breadcrumbs slogan-label slogan-row]]
+            [view.components.sections :refer [main-banner breadcrumbs slogan-label feature-row]]
             [view.components.slideshow :refer [slideshow]]
             [view.components.form :refer [contact-form]]
             [view.components.cards :refer [card card-img-left]]
@@ -9,7 +9,8 @@
 (defn main-page [route]
   (layout route
           [:main
-           (main-banner {:title "Professionelle Haushaltsauflösungen"
+           (main-banner {:route route
+                         :title "Professionelle Haushaltsauflösungen"
                          :p1    "Benötigen Sie eine komplette Räumung von Häusern, Wohnungen, Büros oder Lagerhallen? Wir sind für Sie da!"
                          :p2    "Unser erfahrenes Team sorgt für eine zügige, gründliche und umweltgerechte Müllentsorgung – alles in\nkürzester Zeit und stets in enger Abstimmung mit Ihren Wünschen."})
 
@@ -29,7 +30,7 @@
             [:div.container
              [:div.max_w_800.mx_a.text_align_c_not_mob.mb_60_res
               [:h2.h_mb.fs_28.w_600 "Leistungsumfang von Räumungsmeister"]
-              [:p "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."]]
+              [:p.fw_300 "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."]]
 
              (card {:id          (random-int-id "crd-0")
                     :card-class  "bg_light mb_84_res"
@@ -64,13 +65,13 @@
                     :bg-image    "/img/general-cleaning.png"})
 
              [:div.max_w_800.mx_a.text_align_c_not_mob
-              [:p.p_mb "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."]]]]
+              [:p.fw_300.p_mb "Nach Ihren Vorgaben. Von der Teilräumung bis zum Komplettpaket inkl. Renovierung, Aktenvernichtung und Endreinigung. Vorlauf je nach Umfang zwei bis drei Wochen, meist ist auch noch Platz für Eiltermine. Räumungsdauer einen Tag für eine normale Wohnung, zwei Tage für ein größeres Haus."]]]]
 
            [:div.bg_yellow
             [:div.container
              [:div.max_w_800.mb_60_res.mx_a.text_align_c_not_mob
               [:h2.h_mb.fs_28.fw_600 "Ihr zuverlässiger Partner für schnelle, professionelle und individuelle Haushaltsauflösungen!"]
-              [:p.p_mb "Benötigen Sie eine komplette Räumung von Häusern, Wohnungen, Büros oder Lagerhallen? Wir sind für Sie da! Unser erfahrenes Team sorgt für eine zügige, gründliche und umweltgerechte Müllentsorgung – alles in kürzester Zeit und stets in enger Abstimmung mit Ihren Wünschen."]
+              [:p.fw_300.p_mb "Benötigen Sie eine komplette Räumung von Häusern, Wohnungen, Büros oder Lagerhallen? Wir sind für Sie da! Unser erfahrenes Team sorgt für eine zügige, gründliche und umweltgerechte Müllentsorgung – alles in kürzester Zeit und stets in enger Abstimmung mit Ihren Wünschen."]
               [:h2.h_mb.fs_22.fw_600 "Was wir für Sie tun"]]
 
              [:div.grid_2_col.gap_x_84_res
@@ -125,7 +126,7 @@
                      :bg-image    "/img/free-offer.png"})]]]
 
 
-           [:div#advantages.bg_dark
+           [:div.bg_dark
             [:div.container
              [:div.flex_2_col.align_c
               [:div.flex_grow_1.mt_12.mb_26
@@ -134,27 +135,27 @@
               [:div.pl_60.p_0_mob
                [:h2.h_mb.fs_40.fw_900.c_dark "Was macht uns einzigartig"]
 
-               (slogan-row {:n-row "01"
-                            :title "Schnelligkeit & Zuverlässigkeit."
-                            :desc  "Wir erledigen die Räumung zügig, ohne Qualität einzubüßen."})
+               (feature-row {:icon  [:span.fs_46.fw_700.c_yellow.mr_18 "01"]
+                             :title "Schnelligkeit & Zuverlässigkeit."
+                             :desc  "Wir erledigen die Räumung zügig, ohne Qualität einzubüßen."})
 
-               (slogan-row {:n-row "02"
-                            :title "Transparente Preise."
-                            :desc  "Keine versteckten Kosten, faire Konditionen, klare Abrechnung."})
+               (feature-row {:icon  [:span.fs_46.fw_700.c_yellow.mr_12 "02"]
+                             :title "Transparente Preise."
+                             :desc  "Keine versteckten Kosten, faire Konditionen, klare Abrechnung."})
 
-               (slogan-row {:n-row "03"
-                            :title "Umweltbewusstsein."
-                            :desc  "Wir setzen auf nachhaltige Entsorgung, Recycling und umweltgerechte Verfahren."})
+               (feature-row {:icon  [:span.fs_46.fw_700.c_yellow.mr_12 "03"]
+                             :title "Umweltbewusstsein."
+                             :desc  "Wir setzen auf nachhaltige Entsorgung, Recycling und umweltgerechte Verfahren."})
 
-               (slogan-row {:n-row "04"
-                            :title "Kundenorientierter Service."
-                            :desc  "Ihre Zufriedenheit steht bei uns an erster Stelle. Wir gehen auf Ihre Wünsche ein und sorgen für eine stressfreie Abwicklung."})
+               (feature-row {:icon  [:span.fs_46.fw_700.c_yellow.mr_12 "04"]
+                             :title "Kundenorientierter Service."
+                             :desc  "Ihre Zufriedenheit steht bei uns an erster Stelle. Wir gehen auf Ihre Wünsche ein und sorgen für eine stressfreie Abwicklung."})
 
                [:p.c_dark.fs_22.fst_it.fw_100
                 "Lassen Sie uns gemeinsam Ihre Räumung stressfrei, professionell und nach Ihren individuellen Vorgaben gestalten!"]]]]]
 
 
-           [:div.bg_yellow
+           [:div#contact-form.bg_yellow
             [:div.container
              (contact-form {:mod        :light
                             :title      "Kontaktieren Sie uns noch heute!"

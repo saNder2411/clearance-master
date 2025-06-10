@@ -1,13 +1,13 @@
 (ns view.components.sections)
 
-(defn main-banner [{:keys [title p1 p2 btn-label img-src] :or {btn-label "Erfahren Sie mehr über uns" img-src "/img/pro-household.png"}}]
+(defn main-banner [{:keys [route title p1 p2 btn-label img-src] :or {btn-label "Erfahren Sie mehr über uns" img-src "/img/pro-household.png"}}]
   [:div.container.main_banner
    [:div.main_banner_text
     [:div.mb_42.fade_in_up
      [:h1.h_mb.fw_900 title]
      [:p.fs_18.fw_300.p_mb p1]
      [:p.fs_18.fw_300 p2]]
-    [:a.link-btn.button_d.c_dark.border_r_22.shadow_22.py_6.px_22.mob_w_100.fade_in {:href "/#advantages"}
+    [:a.link-btn.button_d.c_dark.border_r_22.shadow_22.py_6.px_22.mob_w_100.fade_in {:href (str route "#contact-form")}
      btn-label]]
 
    [:img.w_100.border_r_12.fade_in_2s {:decoding "async" :src img-src}]])
@@ -72,12 +72,12 @@
     [:text {:x 145 :y 310 :font-size 16 :font-weight 600 :fill "#fff"} r]])
   ([] (slogan-label {})))
 
-(defn slogan-row [{:keys [n-row title desc]}]
-  [:div.flex.align_c.p_mb
-   [:span.fs_46.fw_700.c_yellow.mr_12 n-row]
+(defn feature-row [{:keys [icon title desc row-cls] :or {row-cls "align_s mb_14"}}]
+  [:div.flex {:class row-cls}
+   icon
    [:div
-    [:p.c_dark.mb_2.fs_20.fw_500 title]
-    [:p.c_dark desc]]])
+    [:h3.fs_18_mob.fw_500.mb_4.c_dark title]
+    (when desc [:p.fw_100.c_dark desc])]])
 
 (defn testimonials [{:keys [dir img-src txt] :or {dir :left}}]
   [:div.ts_outer

@@ -1,13 +1,14 @@
 (ns view.pages.commercial-clearing
   (:require [view.components.layout :refer [layout]]
-            [view.components.sections :refer [main-banner breadcrumbs smooth-testimonials]]
+            [view.components.sections :refer [main-banner breadcrumbs feature-row smooth-testimonials]]
             [view.components.form :refer [contact-form]]))
 
 
 (defn commercial-clearing-page [route]
   (layout route
           [:main
-           (main-banner {:title   "Gewerbliche Räumung"
+           (main-banner {:route route
+                         :title   "Gewerbliche Räumung"
                          :p1      "Möchten Sie Ihre Geschäftsräume schnell, professionell und zuverlässig räumen lassen?"
                          :p2      "Dann profitieren Sie jetzt von unserem speziellen Angebot für Firmenkunden!"
                          :img-src "/img/commercial-clearance.png"})
@@ -18,30 +19,22 @@
 
            [:div.bg_dark
             [:div.container.py_20
-             [:div.max_w_900.mx_a.c_dark
-              [:div.flex.align_s.mb_14
-               [:img.flex_shrink_0.mr_12 {:decoding "async" :alt "icon" :width 40 :src "/svg/calendar-days_y.svg"}]
-               [:div
-                [:h3.fs_18_mob.fw_300.mb_4 "Flexible Terminplanung"]
-                [:p.fs_15_mob.fw_100 "Wir passen uns Ihren Geschäftszeiten an, um Betriebsunterbrechungen zu minimieren"]]]
+             [:div.max_w_900.mx_a.c_dark.mt_14
+              (feature-row {:icon  [:img.flex_shrink_0.mr_12 {:decoding "async" :alt "icon" :width 40 :src "/svg/calendar-days_y.svg"}]
+                            :title "Flexible Terminplanung."
+                            :desc  "Wir passen uns Ihren Geschäftszeiten an, um Betriebsunterbrechungen zu minimieren."})
 
-              [:div.flex.align_s.mb_14
-               [:img.flex_shrink_0.mr_12 {:decoding "async" :alt "icon" :width 40 :src "/svg/file-text_y.svg"}]
-               [:div
-                [:h3.fs_18_mob.fw_300.mb_4 "Kostenlose Beratung und Besichtigung vor Ort"]
-                [:p.fs_15_mob.fw_100 "Individuell auf Ihre Bedürfnisse abgestimmt"]]]
+              (feature-row {:icon  [:img.flex_shrink_0.mr_12 {:decoding "async" :alt "icon" :width 40 :src "/svg/file-text_y.svg"}]
+                            :title "Kostenlose Beratung und Besichtigung vor Ort."
+                            :desc  "Individuell auf Ihre Bedürfnisse abgestimmt."})
 
-              [:div.flex.align_s.mb_14
-               [:img.flex_shrink_0.mr_12 {:decoding "async" :alt "icon" :width 40 :src "/svg/rotate-ccw_y.svg"}]
-               [:div
-                [:h3.fs_18_mob.fw_300.mb_4 "Schnelle und professionelle Abwicklung"]
-                [:p.fs_15_mob.fw_100 "Damit Ihr Unternehmen schnell wieder einsatzbereit ist"]]]
+              (feature-row {:icon  [:img.flex_shrink_0.mr_12 {:decoding "async" :alt "icon" :width 40 :src "/svg/rotate-ccw_y.svg"}]
+                            :title "Schnelle und professionelle Abwicklung."
+                            :desc  "Damit Ihr Unternehmen schnell wieder einsatzbereit ist."})
 
-              [:div.flex.align_s
-               [:img.flex_shrink_0.mr_12 {:decoding "async" :alt "icon" :width 40 :src "/svg/handshake_y.svg"}]
-               [:div
-                [:h3.fs_18_mob.fw_300.mb_4 "Diskrete und zuverlässige Betreuung"]
-                [:p.fs_15_mob.fw_100 "Wir respektieren Ihre Geschäftsgeheimnisse und Eigentum"]]]]]]
+              (feature-row {:icon  [:img.flex_shrink_0.mr_12 {:decoding "async" :alt "icon" :width 40 :src "/svg/handshake_y.svg"}]
+                            :title "Diskrete und zuverlässige Betreuung."
+                            :desc  "Wir respektieren Ihre Geschäftsgeheimnisse und Eigentum."})]]]
 
 
            [:div.bg_yellow
@@ -65,7 +58,7 @@
                                    :p1      "Unser Ziel ist es, Ihre Räumung so stressfrei und professionell wie möglich zu gestalten – damit Sie sich auf das Wesentliche konzentrieren können."
                                    :p2      "Lassen Sie uns gemeinsam Ihre Räume wieder frei machen – mit Loyalität, Herz und höchster Qualität!"})]]
 
-           [:div.bg_dark
+           [:div#contact-form.bg_dark
             [:div.container
              (contact-form {:mod        :dark
                             :title      "Kontaktieren Sie uns noch heute!"

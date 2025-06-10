@@ -18,14 +18,14 @@
 
    [:div.card_right.p_60_res {:class right-class}
     [:div.card_img {:style (format "background-image: url(%s)" bg-image)}]
-    [:p right-text]]])
+    [:p.fw_300 right-text]]])
 
 (defn card-img-left [{:keys [title p1 p2]}]
   [:div.card_img_left.bg_light.border_r_12.my_24
    [:div.card_img_left_text.p_60_res
     [:h2.h_mb.fs_28.fw_600 title]
-    [:p.p_mb p1]
-    [:p p2]]
+    [:p.fw_300.p_mb p1]
+    [:p.fw_300 p2]]
    [:div.card_img_left_img]])
 
 (defn card-text [{:keys [title text image-path]}]
