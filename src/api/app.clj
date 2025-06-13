@@ -8,7 +8,8 @@
             [view.pages.commercial-clearing :refer [commercial-clearing-page]]
             [view.pages.pricing :refer [pricing-page]]
             [view.pages.privacy-policy :refer [privacy-policy-page]]
-            [view.components.form :refer [raw-contact-form success-toast]]))
+            [view.components.form :refer [raw-contact-form success-toast]]
+            [view.components.elements :refer [email-message]]))
 
 (defn- page->body [page]
   (->> page
@@ -55,14 +56,17 @@
 
 (def contact-form (i/interceptor {:name  ::contact-form
                                   :enter (fn [{:keys [request] :as ctx}]
-                                           (let [res (try (garden-email/send-email! {:to      {:email "sander2411de@gmail.com" :name "Alexander"}
-                                                                                     :from    {:email garden-email/my-email-address :name "My App"}
-                                                                                     :subject "Subject"
-                                                                                     :text    "Hello World!"
-                                                                                     :html    "<html><body><h1>Hello World!</h1></body></html>"})
+                                           (let [{:keys [username email message]} (:form-params request)
+                                                 text (str "Benutzer: " username " \n" "Email: " email " \n" message)
+                                                 html (fragment->body (email-message (:form-params request)))
+                                                 res (try (garden-email/send-email! {:to      {:email "sander2411de@gmail.com" :name "Alexander"}
+                                                                                     :from    {:email garden-email/my-email-address :name "Räumungsmeister App"}
+                                                                                     :subject "Räumungsmeister App"
+                                                                                     :text    text
+                                                                                     :html    html})
                                                           (catch Exception e {:error (ex-message e)}))]
 
-                                             (clojure.pprint/pprint (:form-params request))
+
                                              (clojure.pprint/pprint res))
                                            (assoc ctx :response (-> (success-toast)
                                                                     raw-contact-form
