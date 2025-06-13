@@ -3,6 +3,7 @@
 .inline_block {display: inline-block}
 .inline {display: inline}
 .table {display: table}
+.overflow_h {overflow: hidden}
 
 .flex {display: flex}
 .inline_flex {display: inline-flex}

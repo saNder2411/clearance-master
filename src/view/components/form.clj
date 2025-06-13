@@ -1,30 +1,29 @@
 (ns view.components.form)
 
-
-
 (defn raw-contact-form
-  ([success-elm] [:form.relative {:autocomplete "off"
-                                  :hx-post      "/contact-form"
-                                  :hx-target    "this"
-                                  :hx-swap      "outerHTML settle:4s"}
-                  [:div.control.mb_16
-                   [:input {:name "username" :autocomplete "on" :placeholder "Name" :minlength 2 :required true}]]
+  ([report-msg {:keys [username email message]}]
+   [:form.relative {:autocomplete "off"
+                    :hx-post      "/contact-form"
+                    :hx-target    "this"
+                    :hx-swap      "outerHTML settle:5s"}
+    [:div.control.mb_16
+     [:input {:name "username" :value username :autocomplete "on" :placeholder "Name" :minlength 2 :required true}]]
 
-                  [:div.control.mb_16
-                   [:input {:type "email" :name "email" :autocomplete "on" :placeholder "E-Mail-Adresse" :required true}]]
+    [:div.control.mb_16
+     [:input {:type "email" :name "email" :value email :autocomplete "on" :placeholder "E-Mail-Adresse" :required true}]]
 
-                  [:div.control.mb_16
-                   [:textarea {:type "text" :name "message" :rows 2 :autocomplete "on" :placeholder "Ihre Nachricht" :maxlength 2000 :required true}]]
+    [:div.control.mb_16
+     [:textarea {:type "text" :name "message" :rows 2 :autocomplete "on" :placeholder "Ihre Nachricht" :maxlength 2000 :required true} message]]
 
-                  [:div.flex.align_c.mb_24
-                   [:input#agreement.flex_shrink_0.mr_10 {:type "checkbox" :required true}]
+    [:div.flex.align_c.mb_24
+     [:input#agreement.flex_shrink_0.mr_10 {:type "checkbox" :required true}]
 
-                   [:label.cur_pointer {:for "agreement"} "Ich habe die Datenschutzerklärung zur Kenntnis genommen."]]
+     [:label.cur_pointer {:for "agreement"} "Ich habe die Datenschutzerklärung zur Kenntnis genommen."]]
 
-                  [:button#btn-submit.w_100.shadow_22 {:type "submit"}
-                   "Senden"]
-                  success-elm])
-  ([] (raw-contact-form nil)))
+    [:button#btn-submit.w_100.shadow_22 {:type "submit"}
+     "Senden"]
+    report-msg])
+  ([] (raw-contact-form nil nil)))
 
 (defn contact-form [{:keys [title desc mod] :or {mod :light}}]
   (let [[form-cnt-cls img-src] (case mod
@@ -41,13 +40,20 @@
 
      (raw-contact-form)]))
 
-(defn success-toast []
-  [:div.success_toast
-   [:svg {:width 120 :height 120 :viewBox "0 0 400 400"}
-    [:circle.circle {:fill "none" :stroke "#68E534" :stroke-width "20" :cx "200" :cy "200" :r "190" :stroke-linecap "round" :transform "rotate(-90 200 200)"}]
-    [:polyline.tick {:fill "none" :stroke "#68E534" :points "88,214 173,284 304,138" :stroke-width "24" :stroke-linecap "round" :stroke-linejoin "round"}]]])
+(defn success-msg []
+  [:div#contact_form_toast.flex.align_c.w_100.p_6.border_r_8.border_light_shadow.bg_light {:role "alert"}
+   [:div.inline_flex.align_c.justify_c.flex_shrink_0.size_30.border_r_8.bg_green_700
+    [:svg {:width 18 :high 18 :fill "#fff" :viewBox "0 0 20 20"}
+     [:path {:d "M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"}]]]
+
+   [:div.fw_300.fst_it.ml_10 "Ihre Nachricht wurde zugestellt."]])
 
 
+(defn failure-msg []
+  [:div#contact_form_toast.flex.align_c.w_100.p_6.border_r_8.border_light_shadow.bg_light {:role "alert"}
+   [:div.inline_flex.align_c.justify_c.flex_shrink_0.size_30.border_r_8.bg_red_800
+    [:svg {:width 18 :high 18 :fill "#fff" :viewBox "0 0 20 20"}
+     [:path {:d "M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z"}]]]
 
-
+   [:div.fw_300.fst_it.ml_10 "Etwas ist schiefgelaufen, bitte versuchen Sie es erneut."]])
 

@@ -267,45 +267,22 @@ input[type="checkbox"]:not(#nav_mob_switch):active:not(:checked)::after {
     background-color: var(--yellow-bg-btn-hover);
 }
 
-form.htmx-settling .success_toast {
-    display: block;
-}
 
-.success_toast {
+#contact_form_toast {
     position: absolute;
-    top: 20px;
-    left: calc(50% - 60px);
+    top: -58px;
+    left: 0;
     display: none;
-    transition: display 0.5s ease-out;
-    z-index:10;
 }
-
-.success_toast .circle {
-    stroke-dasharray: 1194;
-    stroke-dashoffset: 1194;
-    animation: dc 1s ease-in-out;
-    animation-fill-mode: forwards;
+form.htmx-settling #contact_form_toast {
+    display: flex;
+    animation: trx 0.5s ease-in;
 }
-.success_toast .tick {
-    stroke-dasharray: 350;
-    stroke-dashoffset: 350;
-    animation: dt 0.8s ease-out;
-    animation-fill-mode: forwards;
-    animation-delay: 0.95s;
-}
-@keyframes dc {
+@keyframes trx {
     from {
-        stroke-dashoffset: 1194;
+        transform: translateX(110%);
     }
     to {
-        stroke-dashoffset: 2388;
-    }
-}
-@keyframes dt {
-    from {
-        stroke-dashoffset: 350;
-    }
-    to {
-        stroke-dashoffset: 0;
+        transform: translateX(0%);
     }
 }

@@ -8,7 +8,7 @@
             [view.pages.commercial-clearing :refer [commercial-clearing-page]]
             [view.pages.pricing :refer [pricing-page]]
             [view.pages.privacy-policy :refer [privacy-policy-page]]
-            [view.components.form :refer [raw-contact-form success-toast]]
+            [view.components.form :refer [raw-contact-form success-msg failure-msg]]
             [view.components.elements :refer [email-message]]))
 
 (defn- page->body [page]
@@ -59,19 +59,21 @@
                                            (let [{:keys [username email message]} (:form-params request)
                                                  text (str "Benutzer: " username " \n" "Email: " email " \n" message)
                                                  html (fragment->body (email-message (:form-params request)))
-                                                 res (try (garden-email/send-email! {:to      {:email "sander2411de@gmail.com" :name "Alexander"}
-                                                                                     :from    {:email garden-email/my-email-address :name "Räumungsmeister App"}
-                                                                                     :subject "Räumungsmeister App"
-                                                                                     :text    text
-                                                                                     :html    html})
-                                                          (catch Exception e {:error (ex-message e)}))]
-
-
-                                             (clojure.pprint/pprint res))
-                                           (assoc ctx :response (-> (success-toast)
-                                                                    raw-contact-form
-                                                                    fragment->body
-                                                                    ok)))}))
+                                                 result (try (garden-email/send-email! {:to      {:email "sander2411de@gmail.com" :name "Alexander"}
+                                                                                        :from    {:email garden-email/my-email-address :name "Räumungsmeister App"}
+                                                                                        :subject "Räumungsmeister App"
+                                                                                        :text    text
+                                                                                        :html    html})
+                                                             (catch Exception e {:error (ex-message e)}))
+                                                 response (if (:ok result) (-> (success-msg)
+                                                                               (raw-contact-form nil)
+                                                                               fragment->body
+                                                                               ok)
+                                                                           (-> (failure-msg)
+                                                                               (raw-contact-form (:form-params request))
+                                                                               fragment->body
+                                                                               ok))]
+                                             (assoc ctx :response response)))}))
 
 (def routes #{["/" :head root-head :route-name :root-head]
               ["/" :get root :route-name :root]
