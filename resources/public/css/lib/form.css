@@ -24,7 +24,6 @@ textarea {
     background-color: var(--light-a90);
     border-color: var(--dark-a05);
     box-shadow: var(--light-shadow-input);
-
 }
 .input_l:hover,.input_l:focus {
     border-color: var(--dark-a15);
@@ -178,4 +177,135 @@ input[type="checkbox"]:not(#nav_mob_switch):active:not(:checked)::after {
 .checkbox_l:checked {
     background: var(--dark-a90);
     box-shadow: var( --light-shadow-checkbox-checked);
+}
+
+.form_l {
+    color: var(--color-light);
+}
+.form_l input,
+.form_l textarea {
+    background-color: var(--light-a90);
+    border-color: var(--dark-a05);
+    box-shadow: var(--light-shadow-input);
+}
+.form_l input:hover,
+.form_l input:focus,
+.form_l textarea:hover,
+.form_l textarea:focus {
+    border-color: var(--dark-a15);
+}
+.form_l input::placeholder,
+.form_l textarea::placeholder {
+    color:var(--dark-a40);
+    font-style: italic;
+}
+.form_l input[type="checkbox"] {
+    background-color: var(--light-a90);
+    border: 1px solid var(--dark-a15);
+    box-shadow: var(--light-shadow-checkbox);
+    transition: all 0.3s;
+}
+.form_l input[type="checkbox"]::after {
+    box-shadow: var(--light-shadow-checkbox-after);
+}
+.form_l input[type="checkbox"]:not(:checked):hover {
+    border-color: var(--dark-a30);
+}
+.form_l input[type="checkbox"]:checked {
+    background: var(--dark-a90);
+    box-shadow: var( --light-shadow-checkbox-checked);
+}
+.form_l button {
+    color: var(--color-dark);
+    border-color: var(--light-a05);
+    background-color: var(--dark);
+}
+.form_l button:hover {
+    background-color: var(--dark-a90);
+}
+
+.form_d {
+    color: var(--color-dark)
+}
+.form_d input,
+.form_d textarea {
+    background-color: var(--light-a05);
+    border-color: var(--light-a10);
+}
+.form_d input:hover,
+.form_d textarea:hover,
+.form_d input:focus,
+.form_d textarea:focus {
+    border-color: var(--light-a20);
+}
+.form_d input::placeholder,
+.form_d textarea::placeholder {
+    color: var(--light-a30);
+    font-style: italic;
+}
+.form_d input[type="checkbox"] {
+    background: var(--light-a05);
+    border: 1px solid var(--light-a15);
+}
+.form_d input[type="checkbox"]::after {
+    box-shadow: var(--dark-shadow-chekbox);
+}
+.form_d input[type="checkbox"]:not(:checked):hover {
+    border-color: var(--dark-brd-checkbox-hover);
+}
+.form_d input[type="checkbox"]:checked {
+    background: var(--dark-brd-checkbox-hover);
+    box-shadow: var(--dark-shadow-chekbox-checked);
+}
+.form_d button {
+    color: var(--color-light);
+    border-color: var(--yellow-brd-btn);
+    background: var(--yellow);
+}
+.form_d button:hover {
+    color:var(--dark-a80);
+    background-color: var(--yellow-bg-btn-hover);
+}
+
+form.htmx-settling .success_toast {
+    display: block;
+}
+
+.success_toast {
+    position: absolute;
+    top: 20px;
+    left: calc(50% - 60px);
+    display: none;
+    transition: display 0.5s ease-out;
+    z-index:10;
+}
+
+.success_toast .circle {
+    stroke-dasharray: 1194;
+    stroke-dashoffset: 1194;
+    animation: dc 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+.success_toast .tick {
+    stroke-dasharray: 350;
+    stroke-dashoffset: 350;
+    animation: dt 0.8s ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0.95s;
+}
+@keyframes dc {
+    from {
+        stroke-dashoffset: 1194;
+    }
+    to {
+        stroke-dashoffset: 2388;
+    }
+}
+@keyframes dt {
+    from {
+        stroke-dashoffset: 350;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
 }

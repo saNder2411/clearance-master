@@ -110,7 +110,8 @@
     [:meta {:name "apple-mobile-web-app-title" :content "Räumungsmeister"}]
     [:link {:rel "manifest" :href "/favicon/site.webmanifest"}]
     [:title "Räumungsmeister"]
-    (hp/include-css "/css/index.css")]
+    (hp/include-css "/css/index.css")
+    (hp/include-js "/js/htmx.min.js")]
 
    [:body
     (contact-tab)

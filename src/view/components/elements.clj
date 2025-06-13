@@ -4,3 +4,4 @@
   [:div.flex.align_c
    [:img {:decoding "async" :alt img-alt :width img-w :src img-src}]
    [:span.ml_8 text]])
+

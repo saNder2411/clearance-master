@@ -62,5 +62,4 @@
             [:div.container
              (contact-form {:mod        :dark
                             :title      "Kontaktieren Sie uns noch heute!"
-                            :desc       "Wir freuen uns darauf, Ihnen zu helfen und Ihre Räume wieder frei zu machen!"
-                            :convention "Ich habe die Datenschutzerklärung zur Kenntnis genommen."})]]]))
+                            :desc       "Wir freuen uns darauf, Ihnen zu helfen und Ihre Räume wieder frei zu machen!"})]]]))

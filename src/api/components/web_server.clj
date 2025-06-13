@@ -16,7 +16,8 @@
        ::http/port   (-> config :server :port)
        ::http/type   :jetty
        ::http/join?  false
-       ::http/routes routes}
+       ::http/routes routes
+       ::http/secure-headers {:content-security-policy-settings {:object-src "none"}}}
       http/default-interceptors
       (update ::http/interceptors into custom-interceptors)))
 
