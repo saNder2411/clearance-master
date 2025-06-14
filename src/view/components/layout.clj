@@ -7,7 +7,7 @@
   [:div.sticky.top_0.z_50.bg_d_blur
    [:div.container.flex.align_c.justify_e.c_dark.py_4.fs_14_mob
     [:img {:decoding "async" :alt "email" :width 16 :src "/svg/mail_l.svg"}]
-    [:a.mr_14.ml_6.c_dark {:href "mailto:info@raemungsmeister.de"} "info@raemungsmeister.de"]
+    [:a.mr_14.ml_6.c_dark {:href "mailto:info@raeumungsmeister.de"} "info@raeumungsmeister.de"]
     [:img {:decoding "async" :alt "phone" :width 16 :src "/svg/phone_l.svg"}]
     [:span.ml_6 "+49 155 61383039"]]])
 
@@ -72,7 +72,7 @@
     [:div.mb_32
      [:h2.mb_24 "Kontakt"]
 
-     (item-list {:items [(icon-text-row {:img-src "/svg/mail.svg" :text [:a {:href "mailto:info@raemungsmeister.de"} "info@raemungsmeister.de"]})
+     (item-list {:items [(icon-text-row {:img-src "/svg/mail.svg" :text [:a {:href "mailto:info@raeumungsmeister.de"} "info@raeumungsmeister.de"]})
                          (icon-text-row {:img-src "/svg/phone.svg" :text "+49 155 61383039"})
                          (icon-text-row {:img-src "/svg/map-pin-house.svg" :text "Nefflenallee 21, 74523 Schwäbisch Hall"})
                          (icon-text-row {:img-src "/svg/graduation-cap.svg" :text "DE326222601"})]})]]

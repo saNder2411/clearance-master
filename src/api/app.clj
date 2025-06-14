@@ -59,7 +59,7 @@
                                            (let [{:keys [username email message]} (:form-params request)
                                                  text (str "Benutzer: " username " \n" "Email: " email " \n" message)
                                                  html (fragment->body (email-message (:form-params request)))
-                                                 result (try (garden-email/send-email! {:to      {:email "info@raemungsmeister.de" :name "Johann Romanenko"}
+                                                 result (try (garden-email/send-email! {:to      {:email "info@raeumungsmeister.de" :name "Johann Romanenko"}
                                                                                         :from    {:email garden-email/my-email-address :name "Räumungsmeister App"}
                                                                                         :subject "Räumungsmeister App"
                                                                                         :text    text
