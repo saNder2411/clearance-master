@@ -28,20 +28,6 @@
     [:p.fw_300 p2]]
    [:div.card_img_left_img]])
 
-(defn card-text [{:keys [title text image-path]}]
-  [:div.flex.direction_col.bg_light.border_r_12.p_42_res
-   [:img.ml_a {:decoding "async" :width 100 :src image-path}]
-   [:h2.h_mb.fs_28.fw_600 title]
-   [:p text]])
-
-(defn card-time [{:keys [title sub-title text]}]
-  [:div.card_time.border_r_25.p_18.bg_light
-   [:div.card_time_inner.px_26.pt_26
-    [:h3.mb_24.fs_12.fw_600.uppercase.c_social sub-title]
-    [:h3.mb_24.fs_26.fw_600 title]
-    [:p.fs_14 text]]
-   [:div.show_modal_btn]])
-
 (defn card-price [{:keys [title entries]}]
   (let [[l-k l-v] (last entries)
         bordered (mapv (fn [[k v]]

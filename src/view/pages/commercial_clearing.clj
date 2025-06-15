@@ -3,7 +3,6 @@
             [view.components.sections :refer [main-banner breadcrumbs feature-row smooth-testimonials]]
             [view.components.form :refer [contact-form]]))
 
-
 (defn commercial-clearing-page [route]
   (layout route
           [:main

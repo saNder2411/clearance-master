@@ -9,7 +9,3 @@
 (defn item-list [{:keys [ul-cls li-cls items] :or {ul-cls "fs_14" li-cls "mb_20"}}]
   [:ul {:class ul-cls}
    (map #(vector :li {:class li-cls} %) items)])
-
-(defn tag-list [{:keys [tags]}]
-  [:div.flex.flex_wrap.align_c
-   (map #(vector :div.tag %) tags)])
