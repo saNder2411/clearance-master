@@ -1,7 +1,8 @@
 .fs_10 {font-size:10px}
 .fs_12 {font-size:12px}
+.fs_13_sm {font-size:13px}
 .fs_14 {font-size:14px}
-.fs_14_mob {font-size:14px}
+.fs_14_sm {font-size:14px}
 .fs_16 {font-size:16px}
 .fs_18 {font-size:18px}
 .fs_20 {font-size:20px}
@@ -44,25 +45,19 @@
     .text_align_c_not_mob {text-align: left}
 }
 @media (max-width:388px) {
-    .fs_14_mob {
-        font-size: 13px;
-    }
+    .fs_14_sm {font-size: 13px}
+    .fs_13_sm {font-size:12px}
 }
 @media (max-width:370px) {
-    .fs_14_mob {
-        font-size: 12px;
-    }
+    .fs_14_sm {font-size: 12px}
+    .fs_13_sm {font-size:11px}
 }
 @media (max-width:351px) {
-    .fs_14_mob {
-        font-size: 11px;
-    }
+    .fs_14_sm {font-size: 11px;}
+    .fs_13_sm {font-size:10px}
 }
-
 @media (max-width:333px) {
-    .fs_14_mob {
-        font-size: 10px;
-    }
+    .fs_14_sm {font-size: 10px;}
 }
 .uppercase {text-transform: uppercase}
 .underline {text-decoration: underline}

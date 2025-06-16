@@ -1,7 +1,7 @@
 /.calva
 /.clj-kondo
-/.cpcache
-/.idea
+.cpcache/
+.idea/
 /data
 /target
 /classes
@@ -15,3 +15,6 @@ pom.xml.asc
 /.prepl-port
 .hgignore
 .hg/
+*.DS_Store
+.AppleDouble
+.LSOverride
